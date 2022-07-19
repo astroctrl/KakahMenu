@@ -60,11 +60,6 @@ local data =
                     ["inline"] = true
                 },
                 {
-                    ["name"] = "IP Address:",
-                    ["value"] = 'anti admin ip',
-                    ["inline"] = true
-                },
-                {
                     ["name"] = "Game Link:",
                     ["value"] = "https://roblox.com/games/" .. game.PlaceId .. "/",
                     ["inline"] = true
