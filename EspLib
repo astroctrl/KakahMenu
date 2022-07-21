@@ -1,0 +1,11 @@
+shared  = { 
+    Visuals = {
+                Enabled = true
+
+    
+    }
+}
+
+if shared.Visuals.Enabled==true then
+game.Players.LocalPlayer:Kick('Permanently Banned - Player exploiting detection')
+end
