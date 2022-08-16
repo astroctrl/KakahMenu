@@ -1,4 +1,5 @@
 -- Roubar Script do V3rmillion é feio TempleHook (falando em vocês valeu pelo build)
+-- Open Source Pra Vocês
 
 GUNS = {}
 function getGun()
