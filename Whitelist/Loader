@@ -1,6 +1,1259 @@
-_, Protected_by_MoonSecV2, Discord = 'discord.gg/gQEH2uZxUk'
+-- Roubar Script do V3rmillion é feio TempleHook (falando em vocês valeu pelo build)
+
+GUNS = {}
+function getGun()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v:IsA('ModuleScript') and "ACS_Animations" or "TGIRoleplay_Settings" then
+			return "ACS Normal"
+		else
+			return "Possible ACS Guns"
+		end
+	end
+end
+local roleplaysettings = getGun()
+print(tostring(roleplaysettings))
+if roleplaysettings=="ACS Normal"then
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			table.insert(GUNS, v.Parent.Name) 
+		end
+	end
+elseif roleplaysettings=="Possible ACS Guns" then
+	game.StarterGui:SetCore("SendNotification", {Title = "Aviso!"; Text = "NÃ£o foi detectado um sistema ACS neste jogo."; Icon = "rbxassetid://10455493610"; Duration = 5;})
+end
 
 
-,nil,nil;(function() _msec=(function(k,p,f)local q=p[(83-0x44)];local Y=f[k[(0x591-749)]][k[(791+-0x4c)]];local r=(-46+0x32)/(((-0x64+26980)/210)/0x40)local h=(-85+(255-(0xa6b0/(34544/0x88))))-(0x67/103)local v=f[k[(0x1d3-284)]][k[((-0x24+608)-0x140)]];local D=(((-0x6b+8676)/0x29)/209)+(250/0x7d)local x=f[k[(81241/0x89)]][k[(1846-0x3bc)]]local m=(57-0x37)-(41/(58+(0xe-31)))local a=(0x14-(((882816/0x72)-0xf46)/0xd5))local F=((((0x8c73/45)-459)-198)/0x47)local K=((((7314391/0xfb)/181)-0x79)/0x14)local L=(((608+((-0xcc80+26156)/222))+-0x20)/0xe5)local b=((104+((0xf85/137)-54))+-0x4d)local O=((((10778-0x151a)/0x15)-0x9e)-0x60)local d=(0x3c-((520-((0x576-719)-0x164))-0x8c))local M=(345/(0x14a-((613+-0x69)-293)))local H=((172788/((294756/(-98+0x69))/174))/238)local B=(((549-(763-0x1b4))-147)-0x48)local n=(0x63/(5478/((0xc069-24689)/148)))local e=(-0x7a+(0x122-(0x4119/(0x10a-165))))local u=((-0x73+((0x4e11a/34)/45))+-0x5a)local U=((0x1ef-(636-(839-0x1ce)))/0x3b)local t=((-0x1a5b/(260+(-48+-0x27)))+0x2b)local _=(106+((-0xfb9+(-8415/0x99))/0x28))local c=(480/(0x5280/(470-(-40+0x14e))))local i=(-127+(0x150-(-65+((0x574-758)-0x170))))local Q=k[(0x59c+-58)];local G=f[k[(-0x1d+212)]][k[(0x429-573)]];local T=f[(function(k)return type(k):sub(1,1)..'\101\116'end)('PllmOpkO')..'\109\101'..('\116\97'or'FbHHoLpp')..k[(127495/0xd7)]];local y=f[k[(-114+0x2c3)]][k[(0x5175/21)]];local S=(0x38-54)-((-0x33+(-0x48+182))+-0x39)local C=(86/((-0xec6/122)+0x4a))-(0x160/176)local A=f[k[(41541/0xe3)]][k[(-84+(485+-0x18))]];local o=function(k,f)return k..f end local s=(122-0x76)*(47-((-127+0x14e)-164))local J=f[k[(1154+-0x21)]];local l=(-0x69+107)*(12544/((0x8e06/53)/7))local j=(2072-0x418)*(0x6a+(-156-(22+-0x4a)))local V=(96+(-1+(54+-0x61)))local N=(-87+(8010/(-0x75+207)))*(0x3a+-56)local w=f[k[(70290/(11286/0xab))]]or f[k[(-82+0x2a3)]][k[(70290/(11286/0xab))]];local P=(46080/((0x58bd-11377)/0x3f))local k=f[k[(2619-0x535)]];local g=(function(o)local b,p=1,0x10 local f={j={},v={}}local l=-m local k=p+h while true do f[o:sub(k,(function()k=b+k return k-h end)())]=(function()l=l+m return l end)()if l==(s-m)then l=""p=S break end end local l=#o while k<l+h do f.v[p]=o:sub(k,(function()k=b+k return k-h end)())p=p+m if p%r==S then p=C y(f.j,(A((f[f.v[C]]*s)+f[f.v[m]])))end end return x(f.j)end)("..:::MoonSec::..bBfFlLkKoOpPhHmMmkMllmbfPkHhBmHfokFpmmpfKplpkoKffkHpomlfKkmPOmFBhmKpfmmfmppMKkfkPOoFlomKpOMPOmLfbkbKHHOKlOmMobkKBphmKHFbpKkHlpMPpOkLmOkPBkhpKmKkLoMPPLkOBKhhopFKkOlkmmpfLklHfHmlOlFMbbOlLKbmhKoKFOHBFFmfOklpllflhKoKFFHOFHmpOmLflOfOmboKBHMMpKHLPhLpbmhfhBkPfOHFomBpMPpKklBMOmLMbkMBOklPbppMkpBPHOombHpkLkbpPmhkoPLfbfHbMkppLmBfhkKpKKffLhlpMmPfkkBpHmbbKklBPFLfbkPpHfoPlOmHpHklbpooKLfOpLOBfMHKomfhfFPhomBMmOoOmPOplmbfbpHFOfFmmPbbmmpfLkbpPmKfBkBOpHllMkppLmkKbMPlBFLBHkkpHLLLlkLOLHoPFkmpOmpkkPFfmfkmFKmhpFLmkHkFbmhfKkkPLbMPpKkkMbHBoffmMBlfmkOplmllBKhHoOFOMopOkFBbPplHfHHmOLlhhBPLbhppLmBfBkmhOHLkMPpHKfBKhpFplLmPppLfPmOMKLfOHhKLFPmHblMboblKhHMMpBbbBHFHLbMppmkfofFOHMOkLObmhbkPflHBLOHhokFpmmMkPPofFfPlOPlmbfPBklbBkBBfhkKpOfLKbFkObFPfkkBpfFhkOMLKHbhlbkPpkmffHkbppPFfMHkBbmhfKkKHlKMlPfkFBhhOhbhpKmFfmkOplmbfPkkhKFPlBPPOKkfpfMlOHHKkfkHpomookLBoHflHhOKpfmmfblpMKLKokkBphmofFkfpbHOfmOhFkmffHkmBpkLPBpPMKpfPmOOmmBOolkMppmpFKOFmmKpolPKHLfbfPkkpKBFPbbOMkBpKLkbpPmhLOpFPbbPkMOpPLmBfhkHPOMmfHBLBMmPfkkkmFFMpppfhbHhplbPpkmffHkopFmfkmkFHBPhfKkfpFBmkoKlhbfofkkBhhHKLfPmHpBfBPHkpBmHfmHOMkfboPPKoFlpHFhHpomlfFobPhBKHfHmhOHLKblpmLfflhKoolBMfOKLhbFhbkOFFFLfpHkopFmLmbbpKkHfMHKoHBMhHlmMppmkfLMFoMBpklKboPBkKHlkpBmHfokFpmmhmOkPLhfKffkHpMBppLKBhlbOBopKphmploPFfFHKOkpBphmofOolPBBhLbOhFkmffHkHHpBklbPPMKhbOmPOFLBOklkMppmPbKKFKmFBlmkOplmbfPklpoHBfhBlbmmpfLkkHfHmboOFPbflLMhppLmBfBkHPpblKblPmpOPhkkBphmmBOLLHbFPLKPfhHFoKlKoHlhMfpkLpkobPmlomlFbpooLMBkhFohFFmHplhoOplmbfPkkpHmFPhkFHMppfLkbpBlHBkHffHopPkFMLPHobbhmlFbhkhoLLFmOKFkmhbHMLFpmpOmLfkoFFmfoKPoKLKMlfoLpKKbffFLHLmpOflkMpbfhKomFmhFOklMbmpMklffhMmLHpokFpmmMKOMlHfHmlOlFMbblLMKppLmBffLHBFfmfOklpkLBFHFKMhMoFpOMfOmLfbkbpHHOLFMMmpKkBBlOLBBhfKkfpFBMKpPHHPFkfBkhpmmOLlKbkPpObhhFpfOOfHFOhKmmBOBbmPmKffkBMMhPKkFhOkFBfhkKppflFMoPkkFlBkHBphmofKOLObhhbkPBHmflBHHopFmMfbhhhKHfMhoKBfbbLLbMppmkfkOFOMFpllOMMpBkFflHHhOHkokFpmmMKOpKFfPhOFbHpomlflpbMHkokbOmOOpLBboKHKBPfkkBphmoLFhmpOmLflOfOHpOBloPHlbMfpkLpbmhfKkLPBmFhhhmMpbpBMKllFfKBFhOplmbfPkkpBmHphkbBmMpfLkbpfmLLfhHpomlfLMBoHBKKFommPHmoOklpMmfLHpohFKMbOHFmfhLfbkPpkmffHkPlKmPopkLpbmhfKkkpLHHfOHbOpmkfBkbhmHpllpMMhbLLBMmloFffmMPfLFbmkkbPPmKffomBomlfMkphLmBfhkohkPmfOklpFkPfkkBphmofFkmpOmLfbkPpkmffHkopFMMfpkLpbmhfoofpHmOFlkFLpmkfBkHhKmFfmKOpoMbfPkkpllHfokFPmmpPLkbPPmKMfkHmOMlfMkppkKBfhKKpFfMFOklpMmPhkkBPhmofLFmpOmLfbKPpkmffHoOBFmMFpkLMbmhfKkFhMHOflKMpHPkfBkhpKmlLmkOPlmbfPkkpBmmlOPFpMbpfkPbpPmKffomBomlLMkpPLmBfhkKpkomfOplpMMPfkkBphmofFkmMOmLLbkPpkmFlHkopllMfPHLpbmhfKkfpHmOKlkMhpmklBkHbKmFfmpOpOfbfPKkpfFHfoplPmmpfLklmPmKFfkHppklfMPppkBBfhkKplbmMOkLbMmMPkkBphmpflLmpplLfbhPpplffHkPlFmMKpkLhbmhlKkFbbkOflpMpMfkfBKhpoFFfmppPlmbfPkpmBmHFokFpbkpfLPbphBKffkHppblMMkPbLmLPhkKpfmbfpLlpblPfkhBpfFofFkBlOmLKbkPhkmflHkObkkMfppLpLfhfKKfpmFOflpbPpmkfBkbmKmFFmkOpkkbfPPkpfBHfokFpMbpOLkBbPmKkfkHpomlffbppkFBfhoKpFbmfOhKBMmPKkklBhmoFFkmPOmLkBKPpkmffMHopFMMfppkPbmhfKkkHHmOFlkMphkkfBPhpoBFfmkOpkblBPkKbBmfookFpmmPlLkbphLKfFMHpomlfboppLmBphkhmfmmfOklpMmPfkHBpHLofFmmpplLfbkhBkmLBHkoPFmMFpkLmBMhfKkfpbHOflKMphbKKBkHBKmklmkOplmbfhlkpflHfohFpMLpfLhFBPmKofkbHomlFMkpPLmBkHKKpfmmfhOlpMMPfKofKhmooFkBLOmLfbkPpOoffHPoplbMfpoLpBlmpKkfmHmHklkMPpmkKBkhmoMFfmkOpOfbfPKkpBmmpokFMmmpLLkbpPmolFFHpOllflhppLmBfmkoOfmmoOkLbMmmfkkBpMoofFPmppbLfboPpKllpHkomFmFkpkLPbmhKKkfmmMOflkMpMfkfBKhpKmlpmkOMlmbLPkkpBmmlhfFpMlpfphbpPmKflkHpomloMkPbLmlMhkKpfmmfOPlpbbPfkoBphmofFkmmOmLKbkPpkmfkHkopFmMfmpLpbMhfKkFmHmOklkMppmkfBkhpOBFfmpOplMbfPkkpflMookFmmmMbLkbPPmKffkHmOMlfMkppphBfhKKpLmbHOklMMmbLkkKBhmOlLLmppFLffhPpkmffHkpKFmMfpkLPbmhfKkFhmPOflPMpMlkfBkhpolFomkpblmbfPkkPBmHFokFpbkpfLkbphbKffkHpomkmMkpMLmBlhkKPfmmkpKlpMmPfpMBphMofloMKOmLKbkmokmffHkppKFMfpPLpBFhfOkfpMbOflkbbpmOLBkhpKmFfmkOpLFbfPokpfbHfOoFpmmpoLkFoPmKffkMpomlfMhppklBfmkKplbmfOkLBMmPOkkBphmofFkmpplLfboPpKbffmoopFmMOpkoobmhfKklpHmOflHMpPLkfFkhpObFfmkpflmlfPkkpBmHfokFpMLpfLobphbKfFoHpomlpMkHoLmBfhkOpfmmfOmlpbkPfokBpmbofFkMFOmKpbkPpkmffHkoplkMfpoLpBbhfoofpHmOPlkfopmkfBkmpKmFfmMOpLKbfHkkpFbHfokllmmPlLkbpPmKffkHpOKlfMoppkbBfHoKpfmmhOkKoMmPfkkFphmoflbmppoLffkPpobffHkOLFmbppkLpbmhfKkfpmoOfloMpPbkffohpKmFHmkholmbfPkopBmHfOBFpMOpfKkbpHbKffkmkomofMkppLmBfhkKpFOmfOolpbbPfOkBphmoKFkBmOmKlbkhhkmffmfopobMfpkLpfmhfKkFkHmOmlkbfpmKfBkhpoFFfBHOpLpbfhokpBmHmokofmmpfLkfpPmKfFfHpOplffMppKmBfhkokfmmmOkkkMmhfkkBpHFofkMmpppLfFkPpkmfoHkPmFmbfpkkpbmhfKhfpBLOflPMphbkfBkHkKmofmkOplmffPkkpfpHfOfFpFOpfkobpPmKMfkfPomlfMkPhLmBfHlKpokmfOklpBbPfkkfOhmHFFkmpOmLfbkPpKpffmLoplbMfPkLpbmhoKkFmHmOmlkbhpmkfffhpOoFfmkOpkmbfPkKkBmHmokLpmmPlLkbphPKfllHpomlfboppLmfbhkOKfmmfOkLhMmPfKLBpmlofFkmpPbLfbkhpkmFMHkopFmMfpkLpBphfokfpmbOfLkMppmkoBkbmKmFmmkphlmbfhfkpFoHfokFpbmpfLkBkPmKmfkMpomLlMkppkPBfmFKpfmmfpolpMmhbkkKFhmofFkMhOmLfBLPpoPffHkopLbMfpkkpbmmFKkfpHmOflkMpPpkffkhpobFfMkOplmboPkomBmHmokkpmmpfLhbpmBKfkOHpPmlfMkPbLmBKhkPHfmMlOklpbpPfPFBphmofLkmpOmLmbkhkkmlfHkOhFmMfPFLpfPhfKkfpMbOflkbopmkFBkhpKmFfmkOpLpbfhlkpfbHfOkFpmmpOLkBbPmKmfkmpomlfMHppOLBfhhKpLmmfOkLfMmmkkkLMhmOfFkmppkLfFHPpKlffmoopFmMmpkppbmhfKklpHmOfLfMpPpkfkBhpObFfmkpKlmFKPkkpBmmlokFpMhpfoPbpPmKfFoHpomLBMkHMLmBfhkKpfmmfpflpbHPfkoBpHmofFkMfOmkkbkhkkmLfHkoplkMfbbLpfPhfoofpHmOmlkBlpmkfBkmpoHFfMfOpLpbfHkkpFbbpoklKmmmOLkbpPmolfkHpOhlfBFppLmBfHoKpfmMBOkLPMmPfkkfhhmoflkmpPPLfbkPpkmffHkOkFmbfpkLhbmHfKkfpmkOfopMpPpkffohpKmFmmkPllmbfPkopBmHfOfFpMppfKkbpHbKffkmKomLMMkppLmflhkKpFhmfpflpMmPfKoBphmOBFkbKOmLfbkhhkmffmkoplOMfpkLpbmhfKkFkHmpflkMhpmKfBkhpokFfbpOpLpbfhokpBmHmokofmmpfLkfpPmKfFfHpOplfBLppKmBfhkokfmmmOkOkMmhfkkBpHkofLLmpppLfFkPpkmfpHkOlFmlBpkkhbmhfoffpfmOflkMphmkfBkHkKmFmmkmLlmBlPkkpfPHfpFFpmmpfkobpPmobfkMKomlfMkPhLmBfHLKplPmfOklpMmPfkkfkhmOBFkmhOmkfbkPpKkfffloplpMfHkLpbmhpKkfHHmhBlkfppmkfBmhpPHFfbHOpKmbfPkKFBmbkoklommPfLkbphKKfLHHpOllfboppLmBmhkhpfmmfOkkpMmPfKfBpHpofoBmpPbLfbkhKkmLKHkopFmblpkLpBhhfpPfpHmOfLoMppmKBBkMMKmFfmkOplmbfhfkpfHHfooFpMmpfLkBFPmokfkmkomKfMkppkKBfMfKpFHmfpolpMmPmkkFlhmofFkbpOmLfBfPpKpffMkopLbMfpkkKbmbbKkfpHmpllkMpPhkfFFhpKmFfMoOplmBBPkPhBmHfoklhmmpfkkbpHPKffkHpomlfMkPkLmffhkKhfmMfOklpbKPfppBpHpoflompOmLmbkHlkmffHkppFmMfPfLpBphfOkfpMbOflkbKpmKMBkhpKmllmkOpLhbfbMkpBmHfOoFpmmPBLkfKPmKffkmhomlfbkppkOBfhkKpfmmfOkLkMmhfkkBhhmOfFkmppKLffpPpKpffmoopFmMmpkpfbmhfKklpHmOfLfMpPpkfFLhpOmFfmkpklmbmPkKHBmmfokFpMKpfKLbphpKfLkHpomlPMkPlLmBPhkohfmmfpflplmPfkkBpmmofFkMkOmLmbkbLkmFlHkoplPMfHPLpbmhfoofpHmpblkBKpmkfBkHhKmFfMLOpkPbfPkkpBmHfoklkmmPBLkbhPmoffkHpOKlfllppkpBfMkKpfmmPOklHMmPlkklphmoflbmpHfLffPPpKmffHkOlFmfOpkkbbmHlKkfpmpOfOkMppmkfFkhpKmFmmkpklmlHPkKhBmHfOFFpfFpfLkbpHbKffkmoomLMMkppLmflhkKpFHmfPFlpMmPfkkBphmomFkMOOmLlbkhpkmffmbopLfMfPfLpfbhfKkFkHmphlkMppmofBkhpopFfMfOpkmbfhokpBmHMokKkmmpfLkBhPmKfFlHppPlfMkppKbLbhkoOfmBFOklpMmhlkkBpHmofLFmpOmLfbkPpkmfmHkOpFmMlpkkpbmhfobfpffOfLfMphbkfBkHkKmlhmkOplmffPkkpfpHfOfFpbmpfkobpPmKMfkMKomlfMkPhLmBfHlKpkomfOklpBbPfkkfOhmOMFkmpOmklbkPpKmffHoopFmMfpkoKbmhmKkFpHmOllkbpmKkffbhppfFfMfOpkbbfPkKkBmBpokFpmmhfLkbphpKfFfHppHlfBkppLmBmhkokfmMLOkLpMmPfKbBpmHoflfmphmLfbkhlkmfhHkPlFmblpkLpBphfhkfpHmOfkkMppmkmBkHkKmKHmkphlmbfhFkpFOHfokFpbbpfLkBoPmoHfkHpomLlbPppkHBfmBKpfmmfOkoLMmPmkkfOhmolFkMpOmLfBbPpPhffmfopkmMfpkklbmhLKkLFHmpflkMpPOkflHhpooFfbkOplmbmPkKlBmHkokLpmmpfkfbphpKfKbHpOlloMkPoLmBLhkKPfmmFOklpBkPfkkBpHkofFkmpOmobbkhkkmFbHkoPFmMfhFLpbmhfKKfpHmOflhMppmkfBkhPKmFfmkKHLFbfPkkpomllmMpokfpkLkbpPmolFFHpomlfMKppLmBfhkopfmmFOklpMmPfkkBpMpofFkmppbLfbKPpkmFMHkopFmMFpkLpbmhfKkfpHmOFlKMppmkfpLhMKmFfmkbpPBkFffHkfkHfokFpmmPLLkbPPmKffkHpomLlbFppkbBfhKKpfmmfOhLbMmPLkkBphmoFFkmhOmLfBmPpkmffHKopFmMfpkKfbmhfKkfpHmOflkMpHpkfBohpobFfmKOplmBmPkkPBmHlokFpmmpfKFbpPmKffKHpomlfMKppLmBfhkKmfmmfOkfHbpPfkkBpFLmKpplHbHhbKOfmhMOblpMHOLMmpkLpbmfPmOoOlpMBpOkkBHHLoPFhmFMOmPOplmbfBphMoblKmHKLMopfLkbpfKmLOfFHMpPBkOBMHbKKHLKpfmmfpoLKMmPfkkBmhmofFkMbhLLfbkPpKOffHKopFMMfppkPbmhfKkFLHmOFlkbhPPkfBkhpobFfmkOpLlfOPkkpBmHHokFPmmpFLkbmhMKffkHpOOlfMKppKbBMhkKpfmmFOklpMmPooHBphmoflBmpOMLfbKPpKfFFHkopFmMHpkLPbmHloFfpHmOflOMppmkfFkHOKmFfmkOplmbFPkkpfmHfoKFpmMpfLkbpPmOhfkHpomllMkphLmBfmpKpfmmfOklpMmPfkkFKhmofFkmPOmLfbkPpkmffHkohlbMfpkLplOhKKkfpHmbfpOLPBphmLbhpKmFfmkOplmbfPkoKBmHfoklhbFpfLobphbKffkHppbLKMkpHLmBlhkKpfmMlpFlpbfPfkKBphmofFhMbOmLKbkPpkmfFHkomFmMfPmLpbmhfKofpHmOflkBfpmkfBkhpKmFfmkOpkkbfPkkpfBHfokFpmmPpLkbpPmKFfkHpomlfffppkfBfhoKpfMmfOhLFMmPfkkFFhmoFFkmPOmLkBKPpkmffmMopFMMfphkFbmhfKklFHmOFlkMPpmkkfKhpKmFfMMOplMbfPhoFBmHFoklpmmpFLkbpPmKkFKHpomlfbkppLMBfhpoPfmmfOkkFMmPFkkBpMFofFpmppbLfbOPpkmlKHkoMFmMLpkLhbmhoKMfpmfOfLMMppMkfBPhpoflFmkOplmBPPkkPBmHfpPFpMfpfLobphBKffkMMomlKMkpHLmBlhkobFKmfOplpBKPfkKBpHFofFpMPOmLfbkHFkmfFHkomlMMfpkLpfohfKKfpHmpklkMmpmkfBkhpKmFfMOOpLfbfPKkpBmHfokLkmmpkLkbhPmKffkHppPlfMkppLMBfhkKpfMmfOklpMmPfkkBphmoOFkmpOmLfFhPpkmffHKopFmMfpkLpbmhfKkfpHmOflkMppmkfBkhpKmFfmkOplmbfPkkpBmHLokFpmmpfLkbpPmKffkHpomlfMkppLmBfhkKhfmmfOklpMmPfkkBphMofFkmpOmLfbkPpkmlpHkopFmfHPbLpbmhfPHoMLfmLpPkhflhPKOfMMBFkmkOplmKbBPmfOfbHoPFpmmpfppKFFfHmoPkOOolfMkpppokLBLhoKflKMOPOkfBKPhBphmofFkmpOmLplkPHKBffHkopOFklBfOLfMhfKkfpFLMppMkmBFhmKMFHMfLffObOPmkPBKhmKMMfMkOPkbbFKklHfpHPOkBhMHpFkobmKMHOhpKpfmmfHMpHkHfbPHflhmofFkFHBfPFKofmHFOlBHMMpKfHhFLpbmhfhHOflKbkpPkkBKHLopmphBpllMMPPfkFHkhHoHFMpkoHkFbLPPKHFBmBlKHHOmlfMkppPBKKFlHmKhLBbpPFklBPhOKPlfmPpLLofHLkbkPpkmOOFKMFPfMLPkLpbmhfhBOhlhMmKFlbBKHbKHfMMbpfLobFPhKklLKbBmHfokoKLFBkPmKOffhOFfHpomlfFPffhmKmFLmFpfbMHHPMkKBkkOfmhmofFkfHBbPPkKfoHfOBMkmBpkLPBpPMKpfPmOOmbhhbKlMHPfkfBkhpHfOKLmbmMkOBhPkpBmHfHkphLHBkhLFKBFmLoPlhPPoPLpbMhhokfMmbOKlKboBBBLPfkkBpFkMkppLpBBohFLmOHkOklpMppbLPBlooKHFlHHLOlLMKPpHHPhkfBkhpHlOKLobFPlkPBOhPohFkMLkoBhHbhObmPmKffkBhMHpkkMoHkLBfhkKpOklKMKpmkFflHOKBHkofFkmpBfhBKOfmmboPllMBhHMmpkLpbmfpmpOmlmMBPoLMBMHKKPFHMfBLmpOplmbfBHhPoPFKkOlBmmpfLkKhfFmFOPFMbBPkHOPmLmBfhkhHOFLbbpPFkhBKHflKBlmPplLBbFhlKkfhHKOblphLlOMfpkLpLkFkmpOpFBMKPoKbBKhLKPOBOkFfmkOphbklfmhPOBlLmPpmLKbkObFOmHpFLkbmhFKKfpmFOBloMKppMLmmOklpMmfLhPomFBmmOMLpbbhBkKfhHfmOmBopFmMfMOOMLhBkPMKofFHmpLLbmboBBhhpKmFffKBbPKKLfLoPKLHOokFpmmMLPPKmbBmBOoFMpHlLMkppLmoLFMmoBbmfOklpMmPfkkBpbmlOlLmpOmLfLOFFHhlMBhMFphLObPhhKmFlHMOoLfmolkMppmkfBkhpkmKBfBOHlmbfPkPBkFfkHHlfmmpfLklmFFmloKlmMKPBklBLLmBfhkohFPmfOklpBKPfkkBpmboMFkmPOmKLbkPpkmfoMHopFMMfpPLpbMhfKKfpmfpFlkMppmkKBkhPKmFkMKOplmbfPmkpBMHfOolKmmpFLkfHPmKffkMpOHlfMkppLMBfmBKpFfMFOklpMmPmkkBPhmOllFmpOMLffkPpkmffHhPbFmMFpkkkbmhFKkfpHmOkLKMppmkfffhpKMFfmopBlmbfPkkpBmHfokFpbkpfLKbpPmKffkHpomKLMkphLmBfhkKhfmBfOklpbbPfkhBpmfofkkmpOmLlbkhokmlOHkopFmMfpKLpBbhfKofpMmOflkMPpmkFBkmbKmllmkOpLbbfHbkpBmHfpkFpmmplLkbhPmKFfkmhomlfMpppKPBfhkKpfmmfOklhMmPkkkBhhmpfFkmppbLfboPpKfffHkopFmMkpkLPbmhfKkfpHmOfloMpPfkfBohpKmFfmkOHlmbKPkkpBmmlokFpMfpfKPbpPmKfFoHpomlKMkPOLmBfhkohfmmfOhlpBBPfkkBpmbofFkMBOmkmbkPpkmFlHkoplkMfPFLpbmhfKkfpHmOLlkbfpmkFBkhpOlFfmpOpLfbfPkkpFbHMokFMmmplLkbpPmKfFmHpOllfMOppLmBfhkObfmmOOkLBMmPfkkBmHMofFkmphPLfbKPpomFBHkOlFmMlpkKBbmhfolfpmoOfLbMpPKkfBhMBKmFhmkhllmbFPkkPBmHkOKFpmmpfobbpPMKffpmPomlfMkHKLmBFhkOpFHmfpblpbbPfKHBphmObFkmmOmLhbkhFkmfkmKopFmMfHLLpbMhfKhLFHmOKlkBMpmkFBkhhKmFkMKOplmbfHPkpBMHfOolKmmpKLkflPmKffkMphLlfMPppkFBfhMKplmmfOklMMmPKkkFhhmOlFkmppLLfBBPpkmffHkopFmMppkLpbmhkKkLpHmOflmMpPBkfFKhppmFfmkpflmBFPkKMBmbfokFpMkpfLmbpHhKfLkHpomlpMkHfLmBKhkKpfmmfOPlpbkPfkKBpmbofFkmMOmLmbkPpkmFlHkopllMfhhLpbmhfKkfpHmOKlkMhpmkFBkHhKmFfmPOpkobfPkkpFmHfokFMmmpKLkBFPmOffkHpOFlfMPppobBfHoKpfmmOOkLLMmPfkkBphmofFmmpOmLfbpPpOmffHkOfFmMLpkKPbmMfKkfpmkOfLKMpPmkflkhpKmFpmkpflmfbPkOpBmHfomFpBkpfKpbpPmKffkHMomlpMkpPLmflhkKpFFmfpflpMmPfKoBphmooFkBbOmLfbkPpkmffHPoplbMfpKLpfbhfKkfMHmphlkMppmofBkhpoFFfmPOpLKbfHkkpBmHKokFMmmhlLkBhPmKffHHpOOlfMkppLmBfhkoffmmfOklmMmmfkkBpHkofFOmpPMLfFkPpkmfpHkOPFmMhpkopbmhfKmfpmkOfklMpHmkfBkHfKmLpmkOMlmbfPkkpfFHfomFpmMpfkobpPmKKfkmkomlfMkPhLmBfhhKpLlmfOklpMmPfkkBMhmolFkmPOmklbkPpKFffMbopFmMfhkLpbmhKKkfMHmOPlkBppmkfBPhpoFFfboOpkbbfPkKBBmHHokFpmmpfLkbphkKffkHpOflffkppLmBphkKHfmbFOkKpMmPfkmBpHMofFHmphmLfbkhfkmfpHkpoFmffpkLpBkhfOmfpbfOflkMppmkKBkHfKmFFmkhblmbfPpkpooHfoKFpbbpfLpBPPmKffkllomlFMkPhkPBfhPKplHmfOklpMmmFkkfbhmokFkmpOmLfbkPpKFffHoopFMMfpkLpbmhKKkfpHmOflkbhpmkfBhhpOkFfmkOplmbfPkKBBmHkokFpmmpfLkbphlKffoHpOblfbkppLmBKhkoPfmmoOklpBPPfkkBphMofFkmpOMLfbkPpkMfOHkopFmoBPbLpbmhfhOOmFMbkPPkHMBHBKpfMOhFfmkOplmbfPkHFLmMBoHFpmmpfhokMfMmKoPlHbflLMhppLmBfBFHMpflpbLpmoHPkkkBphmhlpLlmBKoHbkPpkmfffHoHFmMfpkpMobfmolfpHmOflkfmpmkFBkhpKmFlmkhplmbfPKkpBMHfooFpbbpfLkbhPmKLfkHpomkfMkppkBBfhkKpFLmfPklpMmPkkkBphmokFkbpOmLfbPPpkmffHPopllMfpkLMbmhPKkfPHmOflkMmPMkfBkhpoKFfmKOpLfBFPkkpBmHhokFPmmPlkPbphFKffhHpomlfMkHKLmBlhkKMfmmlOkLpfbPfkKBpHFofFompOmkmbkPPkmflHkopFmMfhFLpbmhfKKfpHmOflkMppmkfBkhpKmFfmkOPlmbfPkkpFPHfokFpmMpfLkbpPmKffkHpOBlpMkppLmlHhOKpfmmfbOPMkbHBkpBphmofOokFBfPKmOPpkmffHkhlFmMfpkLpbmhfkkkOmbOflkMppmkfBkFpPmHHmpOplmbfBOHfKMllMOlkmmpfLkkbBHPOkmflMKpMlBbOhhLoFbHBFlmfOklpKBfkHooFFhmOLKmpOmLfBohKkmfLHkOBFmMfpkLpBhhfKOfpmBOflKMpPlooBkhHKmFOmkOPlmbfPkkmfMHfokFpMLpfLKbpHbKMfkHHomlOMkppLmBfHlKpFBmfOOlpMMPfkkFkhmoLFkmhOmLfbkhhoFffHOoplfMfpkLpfbMfKkfmHmOLlkMppmKlBkhpoFFfmpOplmbfPkkpBmHookFpmmpfLkBhPmKffHHpOflfMkppkfBfhkKMfmMMOklPMmPfKmBpHKofFpmpOmLfBomhkmfhHkOfFmMfpkKpbmhfobfpmoOflhMphmkfBkHLKmFfmkOPlmbfPkkpfPHfomFpmmpfLkbpPmobfkmfomlfMkppLmBfHBKpFhmfOolpBmPfkkfLhmoHFkmhOmLfbkPpKOffHooplbMfpkLpbmhHKkFLHmOLlkBppmkffBhpoOFfmPOplmbfPkKlBmHlokFhmmpfLkbphfKffMHpOolfMkppLmBPhkKHfmmlOkkpMmPfkOBpHKofFPmppfLHbkPMkmfMHkoPFmblPFLpBFhfKHfpHmOflkBPpmkKBkhPKmFkmkOpkpbfPpkpfbHfokFpmmPMLkbpPmKFfkHpomlfMkppLm");local x=(0x3c44/203)local f=26 local p=m;local k={}k={[((168+-0x44)/0x64)]=function()local k,m,b,o=v(g,p,p+D);p=p+N;f=(f+(x*N))%P;return(((o+f-(x)+l*(N*r))%l)*((r*j)^r))+(((b+f-(x*r)+l*(r^D))%P)*(l*P))+(((m+f-(x*D)+j)%P)*l)+((k+f-(x*N)+j)%P);end,[(0x16e/183)]=function(k,k,k)local k=v(g,p,p);p=p+h;f=(f+(x))%P;return((k+f-(x)+j)%l);end,[(0xc3/65)]=function()local m,k=v(g,p,p+r);f=(f+(x*r))%P;p=p+r;return(((k+f-(x)+l*(r*N))%l)*P)+((m+f-(x*r)+P*(r^D))%l);end,[(0x20-28)]=function(f,k,p)if p then local k=(f/r^(k-m))%r^((p-h)-(k-m)+h);return k-k%m;else local k=r^(k-h);return(f%(k+k)>=k)and m or C;end;end,[(-36+0x29)]=function()local f=k[(-0x78+(15851/0x83))]();local p=k[(53-0x34)]();local b=m;local o=(k[(28-0x18)](p,h,s+N)*(r^(s*r)))+f;local f=k[(136/0x22)](p,21,31);local k=((-m)^k[(0x86-130)](p,32));if(f==C)then if(o==S)then return k*C;else f=h;b=S;end;elseif(f==(l*(r^D))-h)then return(o==C)and(k*(h/S))or(k*(C/S));end;return Y(k,f-((P*(N))-m))*(b+(o/(r^V)));end,[(0x510/216)]=function(o,b,b)local b;if(not o)then o=k[(88+-0x57)]();if(o==C)then return'';end;end;b=G(g,p,p+o-m);p=p+o;local k=''for p=h,#b do k=Q(k,A((v(G(b,p,p))+f)%P))f=(f+x)%l end return k;end}local function j(...)return{...},J('#',...)end local function g()local e={};local o={};local f={};local O={e,o,nil,f};local p={}local K=(13970/(0x6d24/110))local f={[(65-0x40)]=(function(f)return not(#f==k[((0x459c/54)/165)]())end),[(76+-0x4a)]=(function(f)return k[(0x2c-39)]()end),[(456/(-70+0xde))]=(function(f)return k[(0x77+-113)]()end),[(-0x61+101)]=(function(f)local m=k[(0x39-51)]()local f=''local k=1 for p=1,#m do k=(k+K)%P f=Q(f,A((v(m:sub(p,p))+k)%l))end return f end)};O[3]=k[(0x1b-25)]();local l=k[(68+-0x43)]()for m=1,l do local k=k[(378/0xbd)]();local l;local k=f[k%(135-(272-0xa5))];p[m]=k and k({});end;for P=1,k[(133/0x85)]()do local f=k[(-0x57+89)]();if(k[(0x23-31)](f,m,h)==S)then local O=k[(-0x34+56)](f,r,D);local l=k[((-41+0x329)/0xc0)](f,N,r+N);local f={k[(0x1d-26)](),k[((0x14b+-112)/73)](),nil,nil};local o={[(-36+0x24)]=function()f[M]=k[(-0x44+71)]();f[u]=k[(99+-0x60)]();end,[(84-0x53)]=function()f[n]=k[(-0x66+103)]();end,[((0x45ba/238)-73)]=function()f[d]=k[(-120+(0x7887/255))]()-(r^s)end,[(0x4f+-76)]=function()f[H]=k[(0x49+-72)]()-(r^s)f[u]=k[(-0x3b+62)]();end};o[O]();if(k[(48-0x2c)](l,h,m)==h)then f[b]=p[f[b]]end if(k[(-0x5b+95)](l,r,r)==m)then f[n]=p[f[H]]end if(k[(0x42-62)](l,D,D)==h)then f[_]=p[f[c]]end e[P]=f;end end;for k=h,k[(83+-0x52)]()do o[k-h]=g();end;return O;end;local function C(k,N,x)local p=k[r];local f=k[D];local l=k[m];return(function(...)local P=f;local s={...};local k=m k*=-1 local k=k;local v=J('#',...)-h;local f=m;local l=l;local S=p;local g={};local D={};local k=j local p={};for k=0,v do if(k>=P)then g[k-P]=s[k+h];else p[k]=s[k+m];end;end;local k=v-P+m local k;local P;while true do k=l[f];P=k[(249/0xf9)];o=(3179506)while P<=(1116/0x24)do o-= o o=(5325908)while(53+-0x26)>=P do o-= o o=(391680)while P<=(-0x4c+83)do o-= o o=(13317257)while(0x66/34)>=P do o-= o o=(3686592)while(0xbd/189)>=P do o-= o o=(9816372)while(-29+0x1d)<P do o-= o local k={p,k};k[m][k[r][b]]=k[r][u]+k[r][e];break end while 3183==(o)/((234384/0x4c))do local k={p,k};k[h][k[r][b]]=k[m][k[r][U]]+k[h][k[r][n]];break end;break;end while(o)/((0x474+-48))==3376 do o=(929403)while P>(0x7a-120)do o-= o local k=k[F]p[k](p[k+h])break end while(o)/((0x8c5e2/206))==333 do local f=k[a]p[f](w(p,f+h,k[n]))break end;break;end break;end while(o)/((7109-0xdf2))==3763 do o=(3325150)while P<=(0x59-(211+-0x7f))do o-= o o=(4459338)while P>(111-0x6b)do o-= o local k=k[O]p[k]=p[k](p[k+h])break end while(o)/((3442+-0x4f))==1326 do local f=k[a]p[f]=p[f](w(p,f+m,k[H]))break end;break;end while(o)/((0x2479c/(0xf9-167)))==1825 do o=(6172194)while(0x144/(8532/0x9e))<P do o-= o p[k[b]]=C(S[k[M]],nil,x);break end while 3122==(o)/((0x7d1+-24))do local b=S[k[e]];local o;local m={};o=T({},{__index=function(f,k)local k=m[k];return k[1][k[2]];end,__newindex=function(p,k,f)local k=m[k]k[1][k[2]]=f;end;});for o=1,k[i]do f=f+h;local k=l[f];if k[(0xf/15)]==24 then m[o-1]={p,k[n]};else m[o-1]={N,k[H]};end;D[#D+1]=m;end;p[k[F]]=C(b,o,x);break end;break;end break;end break;end while 272==(o)/((208800/0x91))do o=(7037122)while P<=(0x8d-130)do o-= o o=(232400)while(1782/0xc6)>=P do o-= o o=(11520784)while(0x4b-67)<P do o-= o if(p[k[b]]==p[k[t]])then f=f+h;else f=k[e];end;break end while 3908==(o)/((3063+-0x73))do local m=k[M];local f=p[m]for k=m+1,k[u]do f=f..p[k];end;p[k[O]]=f;break end;break;end while(o)/((-0x6a+770))==350 do o=(5434211)while P>(121+-0x6f)do o-= o local m=k[a];local o=p[m+2];local l=p[m]+o;p[m]=l;if(o>0)then if(l<=p[m+1])then f=k[H];p[m+3]=l;end elseif(l>=p[m+1])then f=k[n];p[m+3]=l;end break end while 2939==(o)/((0xe86-1869))do if(p[k[O]]==k[_])then f=f+h;else f=k[d];end;break end;break;end break;end while 4042==(o)/((189769/0x6d))do o=(204228)while P<=(-0x6e+123)do o-= o o=(482376)while P>(0x948/198)do o-= o p[k[F]]=x[k[n]];break end while 202==(o)/((-0x55+(5003-0x9e2)))do local m=k[L];local l=p[m]local o=p[m+2];if(o>0)then if(l>p[m+1])then f=k[H];else p[m+3]=l;end elseif(l<p[m+1])then f=k[H];else p[m+3]=l;end break end;break;end while(o)/((4509-0x909))==93 do o=(497166)while P>(3066/0xdb)do o-= o p[k[b]]=p[k[d]][k[i]];break end while 1927==(o)/((-97+0x163))do p[k[L]]=p[k[n]][p[k[c]]];break end;break;end break;end break;end break;end while(o)/((146363/0x67))==3748 do o=(842490)while P<=((0x2753-5053)/218)do o-= o o=(8162225)while P<=(0x8e-123)do o-= o o=(1706094)while(-78+0x5f)>=P do o-= o o=(1888128)while((0x1761/105)-0x29)<P do o-= o f=k[n];break end while 3278==(o)/((630+-0x36))do p[k[a]]=N[k[M]];break end;break;end while(o)/((-0x62+2789))==634 do o=(1461780)while P>(0x35+(0x1f-66))do o-= o p[k[F]]=(k[H]~=0);break end while(o)/((-22+(26414/0x2f)))==2707 do p[k[K]]=#p[k[M]];break end;break;end break;end while 2003==(o)/((199675/0x31))do o=(3508440)while(0x63c/76)>=P do o-= o o=(6108431)while P>(-54+0x4a)do o-= o p[k[O]]=k[n];break end while 1613==(o)/((-0x2e+3833))do p[k[O]]=(k[d]~=0);f=f+h;break end;break;end while 865==(o)/((0x91908/147))do o=(818220)while(0x3d-39)<P do o-= o p[k[F]]=p[k[H]]%k[c];break end while 1049==(o)/((1632-0x354))do for k=k[L],k[n]do p[k]=nil;end;break end;break;end break;end break;end while(o)/((-0x68+1806))==495 do o=(3904968)while((0xcb+-94)-0x52)>=P do o-= o o=(131652)while(-55+0x50)>=P do o-= o o=(6768720)while(115-0x5b)<P do o-= o if(p[k[b]]~=p[k[i]])then f=f+h;else f=k[e];end;break end while(o)/((757452/0xbc))==1680 do p[k[L]]=p[k[M]];break end;break;end while 54==(o)/(((-0x65+207331)/85))do o=(2580048)while((0x16b-235)-102)<P do o-= o p[k[F]]={};break end while 912==(o)/((5722-0xb4d))do if(p[k[K]]~=k[_])then f=f+h;else f=k[H];end;break end;break;end break;end while 1126==(o)/((-118+0xe02))do o=(1384500)while(-77+0x6a)>=P do o-= o o=(3050436)while((16585/0x6b)-127)<P do o-= o do return end;break end while 2182==(o)/(((0xb32+-40)-0x594))do do return p[k[b]]end break end;break;end while(o)/((-59+0x1b2))==3692 do o=(1225563)while(0x1d2e/(0x259-352))<P do o-= o x[k[M]]=p[k[b]];break end while 417==(o)/((170462/0x3a))do local m=k[O];local f=p[k[M]];p[m+1]=f;p[m]=f[k[c]];break end;break;end break;end break;end break;end break;end while(o)/((228548/(0xe58/54)))==946 do o=(11281136)while P<=(0x88-89)do o-= o o=(1789958)while(-0x17+62)>=P do o-= o o=(5231180)while(116-0x51)>=P do o-= o o=(237568)while(-116+0x95)>=P do o-= o o=(488220)while(-111+0x8f)<P do o-= o p[k[a]][p[k[M]]]=p[k[_]];break end while(o)/((0x61fa8/254))==309 do local f=k[a];local m=p[f];for k=f+1,k[e]do y(m,p[k])end;break end;break;end while 1856==(o)/((0x165-229))do o=(3395616)while(119+(-27+-0x3a))<P do o-= o p[k[a]][k[M]]=k[t];break end while(o)/((-116+0x58a))==2608 do p[k[b]][k[H]]=p[k[u]];break end;break;end break;end while 1460==(o)/((7221-0xe36))do o=(11838456)while(0x1280/(340-0xd4))>=P do o-= o o=(2074944)while(0x75-81)<P do o-= o p[k[O]]=p[k[d]]-p[k[u]];break end while 2568==(o)/((155136/0xc0))do N[k[e]]=p[k[F]];break end;break;end while 3962==(o)/((-0x72+3102))do o=(332838)while(0x260/16)<P do o-= o if not p[k[b]]then f=f+h;else f=k[n];end;break end while(o)/((0x1562-2768))==123 do if p[k[b]]then f=f+m;else f=k[M];end;break end;break;end break;end break;end while 463==(o)/((-0x67+3969))do o=(8526046)while P<=(0xb9-142)do o-= o o=(671308)while P<=(105-0x40)do o-= o o=(6023310)while(10000/0xfa)<P do o-= o local l=k[L];local b=k[i];local o=l+2 local l={p[l](p[l+1],p[o])};for k=1,b do p[o+k]=l[k];end;local l=l[1]if l then p[o]=l f=k[d];else f=f+m;end;break end while 1770==(o)/((0xd6f+-36))do local m=p[k[U]];if not m then f=f+h;else p[k[L]]=m;f=k[e];end;break end;break;end while 484==(o)/((0x415ab/(0x1a6-229)))do o=(1207920)while(924/0x16)<P do o-= o local k={p,k};k[m][k[r][a]]=k[r][t]+k[r][d];break end while 840==(o)/((0x60c+-110))do local k=k[K]p[k]=p[k](p[k+h])break end;break;end break;end while(o)/((-0x17+3577))==2399 do o=(6836238)while P<=(133-0x58)do o-= o o=(10402216)while(0x29c4/243)<P do o-= o local f=k[O]p[f]=p[f](w(p,f+m,k[d]))break end while(o)/((0xefa+-50))==2749 do local k=k[a]p[k](p[k+h])break end;break;end while 2221==(o)/((0xc2f+-41))do o=(706680)while P>((0x6fe0/160)-0x85)do o-= o local k={p,k};k[h][k[r][a]]=k[m][k[r][_]]+k[h][k[r][M]];break end while 180==(o)/((7887-0xf79))do local f=k[a]p[f](w(p,f+h,k[n]))break end;break;end break;end break;end break;end while(o)/((0x1b09-3469))==3268 do o=(1297560)while(0xe6-(444-0x10d))>=P do o-= o o=(541004)while P<=(0xc5-146)do o-= o o=(3568576)while P<=(6125/0x7d)do o-= o o=(8946252)while P>(-0x25+85)do o-= o local o;p[k[O]]=p[k[e]];f=f+m;k=l[f];o=k[b]p[o](p[o+h])f=f+m;k=l[f];p[k[O]]=N[k[e]];f=f+m;k=l[f];p[k[K]]=x[k[e]];f=f+m;k=l[f];p[k[L]]=p[k[e]];f=f+m;k=l[f];o=k[K]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[b]][k[d]]=p[k[c]];break end while 2358==(o)/((747418/0xc5))do local O;local h;local o;p[k[a]]=k[M];f=f+m;k=l[f];p[k[K]]=k[d];f=f+m;k=l[f];p[k[K]]=#p[k[d]];f=f+m;k=l[f];p[k[b]]=k[M];f=f+m;k=l[f];o=k[K];h=p[o]O=p[o+2];if(O>0)then if(h>p[o+1])then f=k[M];else p[o+3]=h;end elseif(h<p[o+1])then f=k[H];else p[o+3]=h;end break end;break;end while 1096==(o)/((3301+-0x2d))do o=(13956768)while(-0x6e+160)<P do o-= o local r;local P;local o;p[k[a]]={};f=f+m;k=l[f];p[k[F]][k[e]]=k[t];f=f+m;k=l[f];p[k[K]][k[B]]=k[t];f=f+m;k=l[f];o=k[b]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[F]]=p[k[e]][k[i]];f=f+m;k=l[f];p[k[L]]=x[k[H]];f=f+m;k=l[f];o=k[b];P=p[k[e]];p[o+1]=P;p[o]=P[k[c]];f=f+m;k=l[f];p[k[b]]=k[e];f=f+m;k=l[f];o=k[O]p[o]=p[o](w(p,o+m,k[M]))f=f+m;k=l[f];o=k[F];P=p[k[H]];p[o+1]=P;p[o]=P[k[u]];f=f+m;k=l[f];p[k[a]]=p[k[B]];f=f+m;k=l[f];o=k[O]p[o]=p[o](w(p,o+m,k[n]))f=f+m;k=l[f];p[k[b]]={};f=f+m;k=l[f];p[k[O]]=k[M];f=f+m;k=l[f];p[k[L]]=k[d];f=f+m;k=l[f];p[k[O]]=k[M];f=f+m;k=l[f];p[k[a]]=k[d];f=f+m;k=l[f];p[k[L]]=k[e];f=f+m;k=l[f];o=k[O];r=p[o];for k=o+1,k[n]do y(r,p[k])end;break end while 3956==(o)/((285768/0x51))do local n;local P;local L;local o;p[k[K]]=x[k[d]];f=f+m;k=l[f];p[k[K]]=p[k[H]][k[i]];f=f+m;k=l[f];o=k[a];L=p[k[H]];p[o+1]=L;p[o]=L[k[U]];f=f+m;k=l[f];p[k[K]]=p[k[M]];f=f+m;k=l[f];p[k[K]]=p[k[d]];f=f+m;k=l[f];o=k[b]p[o]=p[o](w(p,o+m,k[M]))f=f+m;k=l[f];o=k[K];L=p[k[B]];p[o+1]=L;p[o]=L[k[u]];f=f+m;k=l[f];o=k[O]p[o]=p[o](p[o+h])f=f+m;k=l[f];P={p,k};P[h][P[r][b]]=P[m][P[r][_]]+P[h][P[r][M]];f=f+m;k=l[f];p[k[F]]=p[k[d]]%k[t];f=f+m;k=l[f];o=k[K]p[o]=p[o](p[o+h])f=f+m;k=l[f];L=k[e];n=p[L]for k=L+1,k[_]do n=n..p[k];end;p[k[O]]=n;f=f+m;k=l[f];P={p,k};P[h][P[r][O]]=P[m][P[r][_]]+P[h][P[r][d]];f=f+m;k=l[f];p[k[b]]=p[k[H]]%k[i];break end;break;end break;end while(o)/((-0x77+541))==1282 do o=(4611065)while(135-0x52)>=P do o-= o o=(7280760)while(12896/(570-0x142))<P do o-= o local o;p[k[O]]=p[k[B]][k[U]];f=f+m;k=l[f];p[k[a]]=k[d];f=f+m;k=l[f];o=k[O]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[b]]=x[k[H]];f=f+m;k=l[f];p[k[b]]=p[k[n]][k[i]];f=f+m;k=l[f];p[k[b]]=k[H];f=f+m;k=l[f];o=k[K]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[K]]=x[k[n]];f=f+m;k=l[f];p[k[K]]=p[k[e]][k[c]];f=f+m;k=l[f];p[k[K]]=k[M];f=f+m;k=l[f];o=k[b]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[O]]=x[k[B]];f=f+m;k=l[f];p[k[K]]=p[k[n]][k[U]];f=f+m;k=l[f];p[k[F]]=k[e];f=f+m;k=l[f];o=k[b]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[L]]=x[k[H]];f=f+m;k=l[f];p[k[b]]=p[k[B]][k[c]];f=f+m;k=l[f];p[k[L]]=k[d];f=f+m;k=l[f];o=k[a]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[L]]=x[k[e]];f=f+m;k=l[f];p[k[b]]=p[k[B]][k[_]];f=f+m;k=l[f];p[k[L]]=k[H];f=f+m;k=l[f];o=k[O]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[O]]=x[k[M]];f=f+m;k=l[f];p[k[b]]=p[k[B]][k[c]];f=f+m;k=l[f];p[k[L]]=k[n];f=f+m;k=l[f];o=k[F]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[K]][k[H]]=k[c];f=f+m;k=l[f];p[k[b]]=x[k[e]];f=f+m;k=l[f];p[k[b]]=p[k[n]][k[U]];f=f+m;k=l[f];p[k[L]][k[M]]=p[k[U]];f=f+m;k=l[f];p[k[K]]=x[k[d]];f=f+m;k=l[f];p[k[L]]=p[k[B]][k[t]];f=f+m;k=l[f];p[k[F]]=p[k[n]][k[i]];f=f+m;k=l[f];p[k[O]][k[n]]=p[k[c]];f=f+m;k=l[f];p[k[O]][k[d]]=k[u];f=f+m;k=l[f];p[k[b]][k[e]]=p[k[_]];f=f+m;k=l[f];p[k[F]]=x[k[e]];f=f+m;k=l[f];p[k[F]]=p[k[B]][k[c]];f=f+m;k=l[f];p[k[K]]=k[B];f=f+m;k=l[f];p[k[O]]=k[e];f=f+m;k=l[f];p[k[O]]=k[n];f=f+m;k=l[f];o=k[F]p[o]=p[o](w(p,o+m,k[n]))f=f+m;k=l[f];p[k[F]][k[M]]=p[k[t]];f=f+m;k=l[f];p[k[O]]=x[k[e]];f=f+m;k=l[f];p[k[a]]=p[k[n]][k[_]];f=f+m;k=l[f];p[k[K]]=k[d];f=f+m;k=l[f];p[k[F]]=k[M];f=f+m;k=l[f];p[k[K]]=k[H];f=f+m;k=l[f];p[k[K]]=k[n];f=f+m;k=l[f];o=k[K]p[o]=p[o](w(p,o+m,k[n]))f=f+m;k=l[f];p[k[F]][k[e]]=p[k[U]];f=f+m;k=l[f];p[k[a]]=x[k[n]];f=f+m;k=l[f];p[k[O]]=p[k[H]][k[t]];f=f+m;k=l[f];p[k[K]]=k[M];f=f+m;k=l[f];p[k[L]]=k[B];f=f+m;k=l[f];p[k[L]]=k[d];f=f+m;k=l[f];p[k[L]]=k[H];f=f+m;k=l[f];o=k[O]p[o]=p[o](w(p,o+m,k[d]))f=f+m;k=l[f];p[k[K]][k[n]]=p[k[_]];f=f+m;k=l[f];p[k[K]][k[M]]=k[c];f=f+m;k=l[f];p[k[O]][k[M]]=k[u];f=f+m;k=l[f];p[k[L]]=x[k[d]];f=f+m;k=l[f];p[k[K]]=p[k[n]][k[U]];f=f+m;k=l[f];p[k[O]]=k[B];f=f+m;k=l[f];p[k[K]]=k[e];f=f+m;k=l[f];o=k[K]p[o]=p[o](w(p,o+m,k[n]))f=f+m;k=l[f];p[k[b]][k[H]]=p[k[i]];f=f+m;k=l[f];p[k[O]][k[e]]=p[k[t]];f=f+m;k=l[f];p[k[F]][k[d]]=k[u];f=f+m;k=l[f];p[k[O]][k[H]]=p[k[t]];f=f+m;k=l[f];p[k[K]]=x[k[e]];f=f+m;k=l[f];p[k[K]]=p[k[n]][k[c]];f=f+m;k=l[f];p[k[F]]=k[M];f=f+m;k=l[f];p[k[b]]=k[H];f=f+m;k=l[f];p[k[O]]=k[e];f=f+m;k=l[f];o=k[L]p[o]=p[o](w(p,o+m,k[B]))f=f+m;k=l[f];p[k[K]][k[e]]=p[k[c]];f=f+m;k=l[f];p[k[L]][k[B]]=k[i];f=f+m;k=l[f];p[k[F]]=x[k[d]];break end while(o)/((-0x54+3404))==2193 do p[k[O]]={};f=f+m;k=l[f];p[k[a]][k[n]]=k[U];f=f+m;k=l[f];p[k[a]]=x[k[d]];f=f+m;k=l[f];p[k[O]]=p[k[B]][k[_]];f=f+m;k=l[f];p[k[K]]=p[k[H]][k[c]];f=f+m;k=l[f];p[k[L]]=p[k[H]][k[i]];f=f+m;k=l[f];if p[k[b]]then f=f+m;else f=k[e];end;break end;break;end while 3403==(o)/((1433+-0x4e))do o=(9758583)while P>(0x68a/31)do o-= o local P;local o;p[k[b]]=p[k[B]][k[U]];f=f+m;k=l[f];o=k[O];P=p[k[n]];p[o+1]=P;p[o]=P[k[c]];f=f+m;k=l[f];p[k[a]]=k[M];f=f+m;k=l[f];p[k[K]]={};f=f+m;k=l[f];p[k[O]][k[B]]=k[i];f=f+m;k=l[f];p[k[b]][k[d]]=k[U];f=f+m;k=l[f];p[k[a]][k[M]]=k[u];f=f+m;k=l[f];p[k[O]][k[d]]=k[c];f=f+m;k=l[f];o=k[b]p[o](w(p,o+h,k[M]))f=f+m;k=l[f];p[k[a]]=x[k[M]];f=f+m;k=l[f];p[k[L]]=k[B];f=f+m;k=l[f];o=k[O]p[o](p[o+h])f=f+m;k=l[f];p[k[K]]=x[k[B]];f=f+m;k=l[f];p[k[L]]=p[k[B]][k[c]];f=f+m;k=l[f];o=k[O];P=p[k[e]];p[o+1]=P;p[o]=P[k[i]];f=f+m;k=l[f];p[k[F]]=k[M];f=f+m;k=l[f];p[k[L]]={};f=f+m;k=l[f];p[k[L]][k[d]]=k[u];f=f+m;k=l[f];p[k[F]][k[n]]=k[t];f=f+m;k=l[f];p[k[F]][k[B]]=k[i];f=f+m;k=l[f];p[k[b]][k[M]]=k[c];f=f+m;k=l[f];o=k[L]p[o](w(p,o+h,k[n]))f=f+m;k=l[f];p[k[K]]=x[k[M]];f=f+m;k=l[f];p[k[F]]=k[e];f=f+m;k=l[f];o=k[b]p[o](p[o+h])f=f+m;k=l[f];p[k[L]]=x[k[e]];f=f+m;k=l[f];p[k[F]]=p[k[d]][k[i]];f=f+m;k=l[f];o=k[K];P=p[k[H]];p[o+1]=P;p[o]=P[k[U]];f=f+m;k=l[f];p[k[F]]=k[H];f=f+m;k=l[f];p[k[O]]={};f=f+m;k=l[f];p[k[O]][k[e]]=k[U];f=f+m;k=l[f];p[k[K]][k[n]]=k[i];f=f+m;k=l[f];p[k[b]][k[B]]=k[i];f=f+m;k=l[f];p[k[a]][k[B]]=k[t];f=f+m;k=l[f];o=k[L]p[o](w(p,o+h,k[H]))f=f+m;k=l[f];p[k[F]]=x[k[H]];f=f+m;k=l[f];p[k[K]]=k[n];f=f+m;k=l[f];o=k[F]p[o](p[o+h])f=f+m;k=l[f];p[k[b]]=x[k[H]];f=f+m;k=l[f];p[k[F]]=p[k[B]][k[U]];f=f+m;k=l[f];o=k[L];P=p[k[e]];p[o+1]=P;p[o]=P[k[t]];f=f+m;k=l[f];p[k[b]]=k[B];f=f+m;k=l[f];p[k[b]]={};f=f+m;k=l[f];p[k[b]][k[M]]=k[c];f=f+m;k=l[f];p[k[a]][k[n]]=k[i];f=f+m;k=l[f];p[k[L]][k[H]]=k[_];f=f+m;k=l[f];p[k[b]][k[M]]=k[U];f=f+m;k=l[f];o=k[b]p[o](w(p,o+h,k[e]))f=f+m;k=l[f];if(p[k[L]]~=k[i])then f=f+h;else f=k[B];end;break end while(o)/((885298/0xda))==2403 do p[k[F]]=N[k[n]];f=f+m;k=l[f];p[k[b]]=#p[k[H]];f=f+m;k=l[f];N[k[d]]=p[k[b]];f=f+m;k=l[f];p[k[L]]=N[k[B]];f=f+m;k=l[f];p[k[O]]=#p[k[B]];f=f+m;k=l[f];N[k[H]]=p[k[a]];f=f+m;k=l[f];do return end;break end;break;end break;end break;end while 440==(o)/((6000-0xbeb))do o=(5875488)while P<=(-120+0xb3)do o-= o o=(6597780)while P<=(0xda-161)do o-= o o=(608120)while P>(0x80-72)do o-= o p[k[F]][k[d]]=p[k[U]];f=f+m;k=l[f];p[k[a]]=x[k[e]];f=f+m;k=l[f];p[k[a]]=p[k[e]][k[c]];f=f+m;k=l[f];p[k[O]]=p[k[d]][k[t]];f=f+m;k=l[f];p[k[a]][k[e]]=p[k[U]];f=f+m;k=l[f];p[k[O]][k[n]]=k[t];f=f+m;k=l[f];p[k[K]]=x[k[B]];f=f+m;k=l[f];p[k[O]]=p[k[M]][k[U]];f=f+m;k=l[f];p[k[b]]=k[n];f=f+m;k=l[f];p[k[O]]=k[H];break end while(o)/((0x1a41-3416))==184 do local o;p[k[b]]=k[M];f=f+m;k=l[f];p[k[K]]=k[d];f=f+m;k=l[f];p[k[b]]=k[B];f=f+m;k=l[f];p[k[a]]=k[e];f=f+m;k=l[f];o=k[L]p[o]=p[o](w(p,o+m,k[B]))f=f+m;k=l[f];p[k[b]][k[M]]=p[k[_]];f=f+m;k=l[f];p[k[a]]=x[k[H]];f=f+m;k=l[f];p[k[K]]=p[k[e]][k[c]];f=f+m;k=l[f];p[k[F]]=k[B];f=f+m;k=l[f];p[k[L]]=k[H];f=f+m;k=l[f];p[k[O]]=k[B];f=f+m;k=l[f];p[k[b]]=k[B];f=f+m;k=l[f];o=k[F]p[o]=p[o](w(p,o+m,k[e]))f=f+m;k=l[f];p[k[a]][k[B]]=p[k[c]];f=f+m;k=l[f];p[k[O]]=x[k[e]];f=f+m;k=l[f];p[k[K]]=p[k[d]][k[t]];f=f+m;k=l[f];p[k[O]]=p[k[B]][k[t]];f=f+m;k=l[f];p[k[F]][k[B]]=p[k[c]];f=f+m;k=l[f];p[k[L]][k[M]]=k[c];f=f+m;k=l[f];p[k[L]]=x[k[d]];f=f+m;k=l[f];p[k[K]]=p[k[M]][k[u]];f=f+m;k=l[f];p[k[F]]=k[M];f=f+m;k=l[f];p[k[b]]=k[e];f=f+m;k=l[f];p[k[L]]=k[B];f=f+m;k=l[f];o=k[O]p[o]=p[o](w(p,o+m,k[d]))f=f+m;k=l[f];p[k[a]][k[B]]=p[k[U]];f=f+m;k=l[f];p[k[b]][k[n]]=k[t];f=f+m;k=l[f];p[k[O]][k[B]]=k[_];f=f+m;k=l[f];p[k[a]][k[n]]=k[c];f=f+m;k=l[f];p[k[O]][k[d]]=p[k[i]];f=f+m;k=l[f];p[k[F]]=x[k[B]];f=f+m;k=l[f];p[k[F]]=p[k[n]][k[c]];f=f+m;k=l[f];p[k[L]]=k[B];f=f+m;k=l[f];p[k[b]]=k[e];f=f+m;k=l[f];p[k[b]]=k[d];f=f+m;k=l[f];o=k[K]p[o]=p[o](w(p,o+m,k[M]))f=f+m;k=l[f];p[k[a]][k[M]]=p[k[U]];f=f+m;k=l[f];p[k[F]][k[B]]=k[t];f=f+m;k=l[f];p[k[b]]=x[k[B]];f=f+m;k=l[f];p[k[b]]=p[k[H]][k[t]];f=f+m;k=l[f];p[k[O]]=k[M];f=f+m;k=l[f];p[k[a]]=k[H];f=f+m;k=l[f];p[k[L]]=k[H];f=f+m;k=l[f];p[k[F]]=k[H];f=f+m;k=l[f];o=k[F]p[o]=p[o](w(p,o+m,k[n]))f=f+m;k=l[f];p[k[O]][k[n]]=p[k[c]];f=f+m;k=l[f];p[k[F]]=x[k[e]];f=f+m;k=l[f];p[k[K]]=p[k[n]][k[t]];f=f+m;k=l[f];p[k[K]]=k[B];f=f+m;k=l[f];p[k[K]]=k[e];f=f+m;k=l[f];p[k[F]]=k[n];f=f+m;k=l[f];p[k[a]]=k[M];f=f+m;k=l[f];o=k[L]p[o]=p[o](w(p,o+m,k[H]))f=f+m;k=l[f];p[k[b]][k[n]]=p[k[_]];f=f+m;k=l[f];p[k[K]]=x[k[H]];f=f+m;k=l[f];p[k[a]]=p[k[B]][k[u]];f=f+m;k=l[f];p[k[K]]=p[k[e]][k[U]];f=f+m;k=l[f];p[k[b]][k[B]]=p[k[i]];f=f+m;k=l[f];p[k[a]][k[M]]=k[U];f=f+m;k=l[f];p[k[b]]=x[k[M]];f=f+m;k=l[f];p[k[F]]=p[k[M]][k[i]];f=f+m;k=l[f];p[k[L]]=k[e];f=f+m;k=l[f];p[k[F]]=k[B];f=f+m;k=l[f];p[k[O]]=k[d];f=f+m;k=l[f];o=k[O]p[o]=p[o](w(p,o+m,k[B]))f=f+m;k=l[f];p[k[F]][k[M]]=p[k[u]];f=f+m;k=l[f];p[k[a]][k[n]]=k[t];f=f+m;k=l[f];p[k[a]][k[d]]=k[c];f=f+m;k=l[f];p[k[F]][k[e]]=p[k[u]];f=f+m;k=l[f];p[k[O]]=x[k[d]];f=f+m;k=l[f];p[k[L]]=p[k[H]][k[U]];f=f+m;k=l[f];p[k[a]]=k[e];f=f+m;k=l[f];p[k[b]]=k[M];f=f+m;k=l[f];p[k[F]]=k[H];f=f+m;k=l[f];o=k[F]p[o]=p[o](w(p,o+m,k[n]))f=f+m;k=l[f];p[k[L]][k[M]]=p[k[i]];f=f+m;k=l[f];p[k[b]]=x[k[d]];f=f+m;k=l[f];p[k[b]]=p[k[d]][k[t]];f=f+m;k=l[f];p[k[a]]=k[M];f=f+m;k=l[f];p[k[a]]=k[d];break end;break;end while 3220==(o)/((0x106c-(0x1130-2245)))do o=(97888)while(0xe0-166)<P do o-= o local b;local o;o=k[F]p[o]=p[o](w(p,o+m,k[B]))f=f+m;k=l[f];p[k[a]][k[e]]=p[k[i]];f=f+m;k=l[f];p[k[K]][k[e]]=k[u];f=f+m;k=l[f];p[k[O]][k[e]]=p[k[u]];f=f+m;k=l[f];p[k[O]]=p[k[e]][k[u]];f=f+m;k=l[f];o=k[O];b=p[k[B]];p[o+1]=b;p[o]=b[k[c]];break end while 644==(o)/((0x77f0/202))do local P;local o;p[k[L]]=(k[H]~=0);f=f+m;k=l[f];p[k[b]]=p[k[d]];f=f+m;k=l[f];p[k[K]]=x[k[e]];f=f+m;k=l[f];o=k[O]p[o]=p[o](p[o+h])f=f+m;k=l[f];P=p[k[t]];if not P then f=f+h;else p[k[a]]=P;f=k[H];end;break end;break;end break;end while(o)/((0x1c03-3623))==1656 do o=(2140853)while P<=(10980/0xb4)do o-= o o=(1313380)while P>(0x870/36)do o-= o x[k[e]]=p[k[L]];f=f+m;k=l[f];p[k[b]]={};f=f+m;k=l[f];p[k[F]]={};f=f+m;k=l[f];x[k[B]]=p[k[K]];f=f+m;k=l[f];p[k[O]]=x[k[M]];f=f+m;k=l[f];if(p[k[L]]==k[U])then f=f+h;else f=k[M];end;break end while 1354==(o)/((-105+0x433))do local o;p[k[F]]=x[k[H]];f=f+m;k=l[f];p[k[F]]=p[k[d]][k[U]];f=f+m;k=l[f];o=k[b]p[o]=p[o](p[o+h])f=f+m;k=l[f];p[k[a]]=p[k[e]];f=f+m;k=l[f];f=k[d];break end;break;end while(o)/((-105+(-45+0x6bb)))==1361 do o=(4919200)while(0x27b8/164)<P do o-= o local o;local P;p[k[L]]=x[k[M]];f=f+m;k=l[f];p[k[b]]=k[d];f=f+m;k=l[f];p[k[O]]=k[H];f=f+m;k=l[f];P=k[H];o=p[P]for k=P+1,k[c]do o=o..p[k];end;p[k[F]]=o;f=f+m;k=l[f];if not p[k[L]]then f=f+h;else f=k[B];end;break end while 1376==(o)/(((0x38c1-7298)-0xe48))do local o;p[k[F]]=k[d];f=f+m;k=l[f];p[k[F]]=k[B];f=f+m;k=l[f];o=k[b]p[o]=p[o](w(p,o+m,k[H]))f=f+m;k=l[f];p[k[O]][k[M]]=p[k[u]];f=f+m;k=l[f];p[k[O]]=x[k[e]];f=f+m;k=l[f];p[k[L]]=p[k[n]][k[i]];f=f+m;k=l[f];p[k[L]]=k[d];f=f+m;k=l[f];p[k[K]]=k[M];f=f+m;k=l[f];p[k[K]]=k[H];f=f+m;k=l[f];p[k[L]]=k[B];break end;break;end break;end break;end break;end break;end f+= h end;end);end;return C(g(),{},q())()end)_msec({[(0x1a0-233)]='\115\116'..(function(k)return(k and'(0xe9-133)')or'\114\105'or'\120\58'end)((0x4ec/(0x25c-352))==(0x53-77))..'\110g',[(791+-0x4c)]='\108\100'..(function(k)return(k and'(-0x13+119)')or'\101\120'or'\119\111'end)(((-0x41+87)+-0x11)==(67-0x3d))..'\112',[((-0x24+608)-0x140)]=(function(k)return(k and'(-73+0xad)')and'\98\121'or'\100\120'end)((54-0x31)==(65/0xd))..'\116\101',[(-84+(485+-0x18))]='\99'..(function(k)return(k and'(258-0x9e)')and'\90\19\157'or'\104\97'end)((0x26c/124)==(-0x25+40))..'\114',[(0x1d3ea/202)]='\116\97'..(function(k)return(k and'(229-0x81)')and'\64\113'or'\98\108'end)((0x59+-83)==(135/0x1b))..'\101',[(0x429-573)]=(function(k)return(k and'(293-0xc1)')or'\115\117'or'\78\107'end)((-0x18+27)==(-0x58+119))..'\98',[(1846-0x3bc)]='\99\111'..(function(k)return(k and'(0x105-161)')and'\110\99'or'\110\105\103\97'end)(((4300-0x871)/0x45)==(0x43d/35))..'\97\116',[(-0x10+692)]=(function(k,f)return(k and'(0x5fb4/245)')and'\48\159\158\188\10'or'\109\97'end)((131+-0x7e)==(1146/0xbf))..'\116\104',[(-49+0x593)]=(function(f,k)return((0x348/168)==(0x1e/10)and'\48'..'\195'or f..((not'\20\95\69'and'\90'..'\180'or k)))or'\199\203\95'end),[(0x5175/21)]='\105\110'..(function(k,f)return(k and'(-0x64+200)')and'\90\115\138\115\15'or'\115\101'end)((-57+0x3e)==(62/0x2))..'\114\116',[(70290/(11286/0xab))]='\117\110'..(function(k,f)return(k and'(262-0xa2)')or'\112\97'or'\20\38\154'end)((760/0x98)==(144-0x71))..'\99\107',[(1154+-0x21)]='\115\101'..(function(k)return(k and'(0xec-136)')and'\110\112\99\104'or'\108\101'end)(((0x52d0/200)+-101)==(64+-0x21))..'\99\116',[(2619-0x535)]='\116\111\110'..(function(k,f)return(k and'(5200/(0x8f-91))')and'\117\109\98'or'\100\97\120\122'end)((0x29+-36)==(44+-0x27))..'\101\114'},{[(0x39-42)]=((getfenv))},((getfenv))()) end)()
+function getACSVersion()
+	for i, v in pairs(game:GetService("ReplicatedStorage"):GetDescendants()) do
+		if v:IsA('Configuration') and v.Name~="Framework" then
+			if (v:FindFirstChild('GameRules')) then
+				return "ACS 2.0.1"
+			elseif (v:FindFirstChild('Config')) then
+				return "ACS 1.7 Sequence"
+			else
+				return "VERSION NOT SUPPORTED"
+			end
+		end
+	end
+end
+local VERSIONACS = getACSVersion()
+print(tostring(VERSIONACS))
+
+function getV()
+	for i, v in pairs(game.ReplicatedStorage:GetDescendants()) do
+		if v:IsA('Configuration') and v.Name~="Framework" then
+			return v
+		end
+	end
+end
+GETV=getV()
+print(tostring(GETV))
 
 
+
+local vu = game:GetService("VirtualUser")
+game:GetService("Players").LocalPlayer.Idled:connect(function()
+	vu:Button2Down(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+	wait(1)
+	vu:Button2Up(Vector2.new(0,0),workspace.CurrentCamera.CFrame)
+end)
+
+local SilentAimSettings = {
+	Enabled = false,
+
+	ClassName = "-",
+	ToggleKey = "K",
+
+	TeamCheck = false,
+	VisibleCheck = false, 
+	TargetPart = "Head",
+	SilentAimMethod = "Raycast",
+
+	FOVRadius = 360,
+	FOVVisible = false,
+	ShowSilentAimTarget = false, 
+
+	MouseHitPrediction = false,
+	MouseHitPredictionAmount = 1,
+	HitChance = 100
+}
+
+-- variables
+getgenv().SilentAimSettings = Settings
+local MainFileName = "KakahMenuSilent"
+local SelectedFile, FileToSave = "", ""
+
+local Camera = workspace.CurrentCamera
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local GuiService = game:GetService("GuiService")
+local UserInputService = game:GetService("UserInputService")
+local HttpService = game:GetService("HttpService")
+
+local LocalPlayer = Players.LocalPlayer
+local Mouse = LocalPlayer:GetMouse()
+
+local GetChildren = game.GetChildren
+local GetPlayers = Players.GetPlayers
+local WorldToScreen = Camera.WorldToScreenPoint
+local WorldToViewportPoint = Camera.WorldToViewportPoint
+local GetPartsObscuringTarget = Camera.GetPartsObscuringTarget
+local FindFirstChild = game.FindFirstChild
+local RenderStepped = RunService.RenderStepped
+local GuiInset = GuiService.GetGuiInset
+local GetMouseLocation = UserInputService.GetMouseLocation
+
+local resume = coroutine.resume 
+local create = coroutine.create
+
+local ValidTargetParts = {"Head", "HumanoidRootPart"}
+local PredictionAmount = 0.165
+
+local mouse_box = Drawing.new("Square")
+mouse_box.Visible = false 
+mouse_box.ZIndex = 999 
+mouse_box.Color = Color3.fromRGB(54, 57, 241)
+mouse_box.Thickness = 20 
+mouse_box.Size = Vector2.new(20, 20)
+mouse_box.Filled = true 
+
+local fov_circle = Drawing.new("Circle")
+fov_circle.Thickness = 1
+fov_circle.NumSides = 100
+fov_circle.Radius = 180
+fov_circle.Filled = false
+fov_circle.Visible = false
+fov_circle.ZIndex = 999
+fov_circle.Transparency = 1
+fov_circle.Color = Color3.fromRGB(54, 57, 241)
+
+local ExpectedArguments = {
+	FindPartOnRayWithIgnoreList = {
+		ArgCountRequired = 3,
+		Args = {
+			"Instance", "Ray", "table", "boolean", "boolean"
+		}
+	},
+	FindPartOnRayWithWhitelist = {
+		ArgCountRequired = 3,
+		Args = {
+			"Instance", "Ray", "table", "boolean"
+		}
+	},
+	FindPartOnRay = {
+		ArgCountRequired = 2,
+		Args = {
+			"Instance", "Ray", "Instance", "boolean", "boolean"
+		}
+	},
+	Raycast = {
+		ArgCountRequired = 3,
+		Args = {
+			"Instance", "Vector3", "Vector3", "RaycastParams"
+		}
+	}
+}
+
+function CalculateChance(Percentage)
+	-- // Floor the percentage
+	Percentage = math.floor(Percentage)
+
+	-- // Get the chance
+	local chance = math.floor(Random.new().NextNumber(Random.new(), 0, 1) * 100) / 100
+
+	-- // Return
+	return chance <= Percentage / 100
+end
+
+
+--[[file handling]] do 
+	if not isfolder(MainFileName) then 
+		makefolder(MainFileName);
+	end
+
+	if not isfolder(string.format("%s/%s", MainFileName, tostring(game.PlaceId))) then 
+		makefolder(string.format("%s/%s", MainFileName, tostring(game.PlaceId)))
+	end
+end
+
+local Files = listfiles(string.format("%s/%s", "KakahMenuSilent", tostring(game.PlaceId)))
+
+-- functions
+local function GetFiles() -- credits to the linoria lib for this function, listfiles returns the files full path and its annoying
+	local out = {}
+	for i = 1, #Files do
+		local file = Files[i]
+		if file:sub(-4) == '.lua' then
+			-- i hate this but it has to be done ...
+
+			local pos = file:find('.lua', 1, true)
+			local start = pos
+
+			local char = file:sub(pos, pos)
+			while char ~= '/' and char ~= '\\' and char ~= '' do
+				pos = pos - 1
+				char = file:sub(pos, pos)
+			end
+
+			if char == '/' or char == '\\' then
+				table.insert(out, file:sub(pos + 1, start - 1))
+			end
+		end
+	end
+
+	return out
+end
+
+local function UpdateFile(FileName)
+	assert(FileName or FileName == "string", "oopsies");
+	writefile(string.format("%s/%s/%s.lua", MainFileName, tostring(game.PlaceId), FileName), HttpService:JSONEncode(SilentAimSettings))
+end
+
+local function LoadFile(FileName)
+	assert(FileName or FileName == "string", "oopsies");
+
+	local File = string.format("%s/%s/%s.lua", MainFileName, tostring(game.PlaceId), FileName)
+	local ConfigData = HttpService:JSONDecode(readfile(File))
+	for Index, Value in next, ConfigData do
+		SilentAimSettings[Index] = Value
+	end
+end
+
+local function getPositionOnScreen(Vector)
+	local Vec3, OnScreen = WorldToScreen(Camera, Vector)
+	return Vector2.new(Vec3.X, Vec3.Y), OnScreen
+end
+
+local function ValidateArguments(Args, RayMethod)
+	local Matches = 0
+	if #Args < RayMethod.ArgCountRequired then
+		return false
+	end
+	for Pos, Argument in next, Args do
+		if typeof(Argument) == RayMethod.Args[Pos] then
+			Matches = Matches + 1
+		end
+	end
+	return Matches >= RayMethod.ArgCountRequired
+end
+
+local function getDirection(Origin, Position)
+	return (Position - Origin).Unit * 1000
+end
+
+local function getMousePosition()
+	return GetMouseLocation(UserInputService)
+end
+
+local function IsPlayerVisible(Player)
+	local PlayerCharacter = Player.Character
+	local LocalPlayerCharacter = LocalPlayer.Character
+
+	if not (PlayerCharacter or LocalPlayerCharacter) then return end 
+
+	local PlayerRoot = FindFirstChild(PlayerCharacter, Options.TargetPart.Value) or FindFirstChild(PlayerCharacter, "HumanoidRootPart")
+
+	if not PlayerRoot then return end 
+
+	local CastPoints, IgnoreList = {PlayerRoot.Position, LocalPlayerCharacter, PlayerCharacter}, {LocalPlayerCharacter, PlayerCharacter}
+	local ObscuringObjects = #GetPartsObscuringTarget(Camera, CastPoints, IgnoreList)
+
+	return ((ObscuringObjects == 0 and true) or (ObscuringObjects > 0 and false))
+end
+
+local function getClosestPlayer()
+	if not Options.TargetPart.Value then return end
+	local Closest
+	local DistanceToMouse
+	for _, Player in next, GetPlayers(Players) do
+		if Player == LocalPlayer then continue end
+		if Toggles.TeamCheck.Value and Player.Team == LocalPlayer.Team then continue end
+
+		local Character = Player.Character
+		if not Character then continue end
+
+		if Toggles.VisibleCheck.Value and not IsPlayerVisible(Player) then continue end
+
+		local HumanoidRootPart = FindFirstChild(Character, "HumanoidRootPart")
+		local Humanoid = FindFirstChild(Character, "Humanoid")
+		if not HumanoidRootPart or not Humanoid or Humanoid and Humanoid.Health <= 0 then continue end
+
+		local ScreenPosition, OnScreen = getPositionOnScreen(HumanoidRootPart.Position)
+		if not OnScreen then continue end
+
+		local Distance = (getMousePosition() - ScreenPosition).Magnitude
+		if Distance <= (DistanceToMouse or Options.Radius.Value or 2000) then
+			Closest = ((Options.TargetPart.Value == "Random" and Character[ValidTargetParts[math.random(1, #ValidTargetParts)]]) or Character[Options.TargetPart.Value])
+			DistanceToMouse = Distance
+		end
+	end
+	return Closest
+end
+local Notification = loadstring(game:HttpGet("https://raw.githubusercontent.com/Jxereas/UI-Libraries/main/notification_gui_library.lua", true))()
+
+-- Notification.new("error", "Error Heading", "Error body message.") 
+-- Notification.new("success", "Success Heading", "Success body message.")
+-- Notification.new("info", "Information Heading", "Information body message.")
+-- Notification.new("warning", "Warning Heading", "Warning body message.") 
+-- Notification.new("message", "Message Heading", "Message body message.") 
+
+
+-- \\ Combat Box //
+local repo = 'https://raw.githubusercontent.com/wally-rblx/LinoriaLib/main/'
+local Library = loadstring(game:HttpGet(repo .. 'Library.lua'))()
+local ThemeManager = loadstring(game:HttpGet(repo .. 'addons/ThemeManager.lua'))()
+local SaveManager = loadstring(game:HttpGet(repo .. 'addons/SaveManager.lua'))()
+-- \\ Window //
+local Window = Library:CreateWindow({
+	Title = 'Kakah Menu V5 - ACS 2.0.1',
+	Center = true, 
+	AutoShow = true,
+})
+
+local CombatTab = Window:AddTab("Combat")
+local silent = CombatTab:AddLeftTabbox("Silent Options") do
+	local silent = silent:AddTab("Silent Options")
+
+	silent:AddToggle("aim_Enabled", {Text = "Enable Silent Aim"}):AddKeyPicker("aim_Enabled_KeyPicker", {Default = "K", SyncToggleState = true, Mode = "Toggle", Text = "Enabled", NoUI = false});
+	Options.aim_Enabled_KeyPicker:OnClick(function()
+		SilentAimSettings.Enabled = not SilentAimSettings.Enabled
+
+		Toggles.aim_Enabled.Value = SilentAimSettings.Enabled
+		Toggles.aim_Enabled:SetValue(SilentAimSettings.Enabled)
+
+		mouse_box.Visible = SilentAimSettings.Enabled
+	end)
+
+	silent:AddToggle("TeamCheck", {Text = "Team Check", Default = SilentAimSettings.TeamCheck}):OnChanged(function()
+		SilentAimSettings.TeamCheck = Toggles.TeamCheck.Value
+	end)
+	silent:AddToggle("VisibleCheck", {Text = "Visible Check", Default = SilentAimSettings.VisibleCheck}):OnChanged(function()
+		SilentAimSettings.VisibleCheck = Toggles.VisibleCheck.Value
+	end)
+	silent:AddDropdown("TargetPart", {Text = "Target", Default = SilentAimSettings.TargetPart, Values = {"Head", "HumanoidRootPart", "Random"}}):OnChanged(function()
+		SilentAimSettings.TargetPart = Options.TargetPart.Value
+	end)
+
+	silent:AddSlider('HitChance', {
+		Text = 'Hit chance',
+		Default = 100,
+		Min = 0,
+		Max = 100,
+		Rounding = 1,
+
+		Compact = false,
+	})
+	Options.HitChance:OnChanged(function()
+		SilentAimSettings.HitChance = Options.HitChance.Value
+	end)
+end
+
+local ShowFOV = CombatTab:AddLeftTabbox("FOV") do
+	local FOV = ShowFOV:AddTab("FOV")
+
+	FOV:AddToggle("Visible", {Text = "Show FOV Circle"}):AddColorPicker("Color", {Default = Color3.fromRGB(54, 57, 241)}):OnChanged(function()
+		fov_circle.Visible = Toggles.Visible.Value
+		SilentAimSettings.FOVVisible = Toggles.Visible.Value
+	end)
+	FOV:AddSlider("Radius", {Text = "FOV Radius", Min = 0, Max = 360, Default = 130, Rounding = 0}):OnChanged(function()
+		fov_circle.Radius = Options.Radius.Value
+		SilentAimSettings.FOVRadius = Options.Radius.Value
+	end)
+	FOV:AddToggle("MousePosition", {Text = "Aim Target"}):AddColorPicker("MouseVisualizeColor", {Default = Color3.fromRGB(54, 57, 241)}):OnChanged(function()
+		mouse_box.Visible = Toggles.MousePosition.Value 
+		SilentAimSettings.ShowSilentAimTarget = Toggles.MousePosition.Value 
+	end)
+end
+
+-- \\ Tabs //
+local GameTab = {Game = Window:AddTab('Guns Editor')}
+local VisualsTab = {Visual = Window:AddTab('Visuals')}
+local PlayerTab = {Player = Window:AddTab('Player')}
+local TrollTab = {Troll = Window:AddTab('Troll')}
+local SettingsTab = {Settings = Window:AddTab('Settings')}
+-- \\ Box //
+local GunMod = GameTab.Game:AddLeftGroupbox('Gun Modifications')
+local CharacterTab = PlayerTab.Player:AddLeftGroupbox('Character')
+local CombatVisuals = VisualsTab.Visual:AddLeftGroupbox('Combat Visuals')
+local CrosshairBox = VisualsTab.Visual:AddLeftGroupbox('Crosshair')
+local ServerTab = TrollTab.Troll:AddLeftGroupbox('Server')
+local PlayersTab = TrollTab.Troll:AddRightGroupbox('Players')
+local BuildTab = TrollTab.Troll:AddRightGroupbox('Build Client')
+local BuildServer = TrollTab.Troll:AddLeftGroupbox('Build Server')
+local MenuSettingsBox = SettingsTab.Settings:AddLeftGroupbox('Menu Settings')
+local MiscBox = SettingsTab.Settings:AddRightGroupbox('Misc')
+
+Library:SetWatermark('Kakah Menu - ACS 2.0.1 - '..game.PlaceId)
+wait(0.5)
+Library:SetWatermarkVisibility(true)
+
+
+-- Initial Script
+
+-- Combat Box
+GunMod:AddLabel('Only ACS - 2.0.1')
+local InfAmmoButton = GunMod:AddButton("Inf Ammo", function()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+				MOD = v.Parent["TGIRoleplay_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.Ammo = math.huge;
+				SCRIPTMOD.AmmoInGun = math.huge;
+				SCRIPTMOD.StoredAmmo = math.huge;
+				SCRIPTMOD.MaxStoredAmmo = math.huge;
+			else
+				MOD = v.Parent["ACS_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.Ammo = math.huge;
+				SCRIPTMOD.AmmoInGun = math.huge;
+				SCRIPTMOD.StoredAmmo = math.huge;
+				SCRIPTMOD.MaxStoredAmmo = math.huge;
+			end
+		end
+	end
+end)
+local NoSpreadButton = GunMod:AddButton("No Spread", function()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+				MOD = v.Parent["TGIRoleplay_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.MinSpread = 0.00001;
+				SCRIPTMOD.MaxSpread = 0.00002;
+			else
+				MOD = v.Parent["ACS_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.MinSpread = 0.00001;
+				SCRIPTMOD.MaxSpread = 0.00002;
+			end
+		end
+	end
+end)
+local NoRecoilButton = GunMod:AddButton("No Recoil", function()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+				MOD = v.Parent["TGIRoleplay_Settings"];
+				SCRIPTMOD = require(MOD);
+				--cam
+				SCRIPTMOD.camRecoil.camRecoilUp = {0,0};
+				SCRIPTMOD.camRecoil.camRecoilTilt = {0,0};
+				SCRIPTMOD.camRecoil.camRecoilLeft = {0,0};
+				SCRIPTMOD.camRecoil.camRecoilRight = {0,0};
+				--gun
+				SCRIPTMOD.gunRecoil.gunRecoilUp = {0,0};
+				SCRIPTMOD.gunRecoil.gunRecoilTilt = {0,0};
+				SCRIPTMOD.gunRecoil.gunRecoilLeft = {0,0};
+				SCRIPTMOD.gunRecoil.gunRecoilRight = {0,0};
+			else
+				MOD = v.Parent["ACS_Settings"];
+				SCRIPTMOD = require(MOD);
+				--cam
+				SCRIPTMOD.camRecoil.camRecoilUp = {0,0};
+				SCRIPTMOD.camRecoil.camRecoilTilt = {0,0};
+				SCRIPTMOD.camRecoil.camRecoilLeft = {0,0};
+				SCRIPTMOD.camRecoil.camRecoilRight = {0,0};
+				--gun
+				SCRIPTMOD.gunRecoil.gunRecoilUp = {0,0};
+				SCRIPTMOD.gunRecoil.gunRecoilTilt = {0,0};
+				SCRIPTMOD.gunRecoil.gunRecoilLeft = {0,0};
+				SCRIPTMOD.gunRecoil.gunRecoilRight = {0,0};
+			end
+		end
+	end
+end)
+local NoBulletDropButton = GunMod:AddButton("No Bullet Drop", function()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+				MOD = v.Parent["TGIRoleplay_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.BulletDrop= 0
+			else
+				MOD = v.Parent["ACS_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.BulletDrop= 0
+			end
+		end
+	end
+end)
+
+GunMod:AddToggle('eantibreak', {Text = 'Anti Break',Default = false, Tooltip = 'Enable anti break gun',})
+Toggles.eantibreak:OnChanged(function()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+				MOD = v.Parent["TGIRoleplay_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.CanBreak = Toggles.eantibreak.Value;
+			else
+				MOD = v.Parent["ACS_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.CanBreak = Toggles.eantibreak.Value;
+			end
+		end
+	end
+end)
+GunMod:AddSlider('DamageSlider', {Text = 'Change Damage', Default = 5, Min = 5, Max = 500, Rounding = 1, Compact = false,})
+Options.DamageSlider:OnChanged(function()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+				MOD = v.Parent["TGIRoleplay_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.MinDamage = Options.DamageSlider.Value
+			else
+				MOD = v.Parent["ACS_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.MinDamage = Options.DamageSlider.Value
+			end
+		end
+	end
+end)
+GunMod:AddDropdown('FireModeDrop', {Values = {"",'Auto', 'Burst', 'Semi'}, Default = 1, Multi = false, Text = 'Select Mode:', Tooltip = 'Change gun fire mode',})
+Options.FireModeDrop:OnChanged(function()
+	if Options.FireModeDrop.Value=="Auto" then
+		for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+			if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+				if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+					MOD = v.Parent["TGIRoleplay_Settings"];
+					SCRIPTMOD = require(MOD);
+					SCRIPTMOD.ShootType = 3
+				else
+					MOD = v.Parent["ACS_Settings"];
+					SCRIPTMOD = require(MOD);
+					SCRIPTMOD.ShootType = 3
+				end
+			end
+		end
+	elseif Options.FireModeDrop.Value=="Burst" then
+		for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+			if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+				if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+					MOD = v.Parent["TGIRoleplay_Settings"];
+					SCRIPTMOD = require(MOD);
+					SCRIPTMOD.ShootType = 2
+				else
+					MOD = v.Parent["ACS_Settings"];
+					SCRIPTMOD = require(MOD);
+					SCRIPTMOD.ShootType = 2
+				end
+			end
+		end
+	elseif Options.FireModeDrop.Value=="Semi" then
+		for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+			if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+				if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+					MOD = v.Parent["TGIRoleplay_Settings"];
+					SCRIPTMOD = require(MOD);
+					SCRIPTMOD.ShootType = 1
+				else
+					MOD = v.Parent["ACS_Settings"];
+					SCRIPTMOD = require(MOD);
+					SCRIPTMOD.ShootType = 1
+				end
+			end
+		end
+	end
+end)
+GunMod:AddInput('BurstFireModeAmount', {
+	Default = "3",
+	Numeric = true,
+	Finished = false,
+
+	Text = 'Burst FireMode - Edit Bullets Amount',
+	Tooltip = 'Change the amount of bullets per burst.',
+
+	Placeholder = 'Ex: 10',
+})
+Options.BurstFireModeAmount:OnChanged(function()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+				MOD = v.Parent["TGIRoleplay_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.BurstShot = Options.BurstFireModeAmount.Value
+			else
+				MOD = v.Parent["ACS_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.BurstShot = Options.BurstFireModeAmount.Value
+			end
+		end
+	end
+end)
+
+
+-- Gun Custom
+
+local arm = game:GetService("ReplicatedStorage")["ACS_Engine"].ArmModel.Arms["Left Arm"]
+CombatVisuals:AddToggle('WeaponModel', {Text = 'Gun Model',Default = false,Tooltip = 'Enable Gun Model/Change Model Color',}):AddColorPicker('CoisarPicker', {Default = Color3.fromRGB(27, 42, 53),})
+Toggles.WeaponModel:OnChanged(function()
+	g = Toggles.WeaponModel.Values
+end)
+Options.CoisarPicker:OnChanged(function()
+	local g = Toggles.WeaponModel.Value
+	if g==true then
+		for i, v in pairs(game:GetService("ReplicatedStorage")["ACS_Engine"].GunModels:GetDescendants()) do
+			if v.ClassName=='Part' or v.ClassName=='UnionOperation'then
+				v.Color=Options.CoisarPicker.Value
+				wait()
+			end
+		end
+	end
+end)
+CombatVisuals:AddDropdown('WeaponMaterialDrop', {Values = {'SmoothPlastic', 'Wood', 'Slate', 'Concrete', 'CorrodedMetal', 'DiamondPlate', 'Foil', 'Grass', 'Ice', 'Marble', 'Granite', 'Brick', 'Pebble', 'Sand', 'Fabric', 'Plastic', 'Metal', 'WoodPlanks', 'Cobblestone', 'Air', 'Water', 'Rock', 'Glacier', 'Snow', 'Sandstone', 'Mud', 'Basalt', 'Ground', 'CrackedLava', 'Neon', 'Glass', 'Asphalt', 'LeafyGrass', 'Salt', 'Limestone', 'Pavement', 'ForceField'}, Default = 1, Multi = false, Text = 'Weapon Material:', Tooltip = 'Change Weapon Model Material.',})
+Options.WeaponMaterialDrop:OnChanged(function()
+	h=Options.WeaponMaterialDrop.Value
+	local g = true
+	if g==true then
+		for i, v in pairs(game:GetService("ReplicatedStorage")["ACS_Engine"].GunModels:GetDescendants()) do
+			if v.ClassName=='Part' or v.ClassName=='UnionOperation'then
+				v.Material=Options.WeaponMaterialDrop.Value
+				wait()
+			end
+		end
+	end
+end)
+CombatVisuals:AddToggle('ArmModel', {Text = 'Arm Model',Default = false,Tooltip = 'Enable Arm Model/Change Model Color',})
+Toggles.ArmModel:OnChanged(function()
+	gsja = Toggles.ArmModel.Value
+end)
+CombatVisuals:AddDropdown('ArmMaterialDrop', {Values = {'SmoothPlastic', 'ForceField'}, Default = 1, Multi = false, Text = 'Arm Material:', Tooltip = 'Change Arm Model Material.',})
+Options.ArmMaterialDrop:OnChanged(function()
+	h=Options.ArmMaterialDrop.Value
+	if gsja==true then
+		game:GetService("ReplicatedStorage")["ACS_Engine"].ArmModel.Arms["Left Arm"].Material=h
+		game:GetService("ReplicatedStorage")["ACS_Engine"].ArmModel.Arms["Right Arm"].Material=h
+	end
+end)
+CombatVisuals:AddToggle('HideLeftArm', {Text = 'Hide Left Arm',Default = false, Tooltip = 'Hide Left Arm',})
+Toggles.HideLeftArm:OnChanged(function()
+	a = Toggles.HideLeftArm.Value
+	if a==false then
+		arm.Transparency = 0
+	elseif a==true then
+		arm.Transparency = 1
+	end
+end)
+CrosshairBox:AddToggle('EnableCrossair', {Text = 'Enable CrossHair',Default = false, Tooltip = 'Hide/Show Crosshair',})
+Toggles.EnableCrossair:OnChanged(function()
+	for i, v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetDescendants()) do
+		if v.Name == "ACS_Animations" and v.Parent.Name ~= "Knife" and v.Parent.Name ~= "M67" and v.Parent.Name ~= "Flashbang"  then
+			if game.PlaceId==9483667454 or game.PlaceId== 6911111094 then
+				MOD = v.Parent["TGIRoleplay_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.CrossHair= Toggles.EnableCrossair.Value
+				SCRIPTMOD.CenterDot = Toggles.EnableCrossair.Value
+			else
+				MOD = v.Parent["ACS_Settings"];
+				SCRIPTMOD = require(MOD);
+				SCRIPTMOD.CrossHair = Toggles.EnableCrossair.Value
+				SCRIPTMOD.CenterDot = Toggles.EnableCrossair.Value
+			end
+		end
+	end
+end)
+
+-- Character Tab
+
+local modcharacter = GETV.GameRules.Config
+local requiredc = require(modcharacter);
+
+CharacterTab:AddSlider('RunWalkSlider', {Text = 'Change Run WalkSpeed',Default = 24,Min = 0,Max = 500,Rounding = 1,Compact = false,})
+CharacterTab:AddSlider('CrouchWalkSlider', {Text = 'Change Crouch WalkSpeed',Default = 24,Min = 0,Max = 500,Rounding = 1,Compact = false,})
+CharacterTab:AddSlider('JumpSlider', {Text = 'Change JumpPower',Default = 50,Min = 0,Max = 500,Rounding = 1,Compact = false,})
+CharacterTab:AddSlider('FOVSlider', {Text = 'Change Field Of View',Default = 70,Min = 70,Max = 120,Rounding = 1,Compact = false,})
+CharacterTab:AddSlider('GravitySlider', {Text = 'Change Gravity',Default = 192,Min = 0,Max = 1000,Rounding = 1,Compact = false,})
+CharacterTab:AddSlider('WorldTime', {Text = 'Change World Time',Default = 12,Min = 0,Max = 23,Rounding = 1,Compact = false,})
+Options.WorldTime:OnChanged(function()
+	game.Lighting.ClockTime = Options.WorldTime.Value
+end)
+Options.RunWalkSlider:OnChanged(function()
+	requiredc.RunWalkSpeed = Options.RunWalkSlider.Value
+end)
+Options.CrouchWalkSlider:OnChanged(function()
+	requiredc.CrouchWalkSpeed = Options.CrouchWalkSlider.Value
+end)
+Options.JumpSlider:OnChanged(function()
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = Options.JumpSlider.Value
+end)
+Options.FOVSlider:OnChanged(function()
+	game.Workspace.Camera.FieldOfView = Options.FOVSlider.Value
+end)
+Options.GravitySlider:OnChanged(function()
+	game.Workspace.Gravity = Options.GravitySlider.Value
+end)
+local ResetSliderButton = CharacterTab:AddButton('Reset Changes', function()
+	Options.RunWalkSlider:SetValue(16)
+	requiredc.CrouchWalkSpeed = 24
+	Options.CrouchWalkSlider:SetValue(16)
+	requiredc.CrouchWalkSpeed = 6
+	Options.JumpSlider:SetValue(50)
+	game.Players.LocalPlayer.Character.Humanoid.JumpPower = 50
+	Options.FOVSlider:SetValue(70)
+	game.Workspace.Camera.FieldOfView = 70
+	Options.GravitySlider:SetValue(192)
+	game.Workspace.Gravity = 192
+	Options.WorldTime:SetValue(12)
+	game.Lighting.ClockTime = 12
+end)
+CharacterTab:AddToggle('ResetBind', {Text = 'Reset Keybind', Default = false, Tooltip = 'Enable Reset Bind.',}):AddKeyPicker('ResetBind', { Default = 'R', NoUI = true, Text = 'Menu keybind' })
+Options.ResetBind:OnClick(function()
+	local rbind = Toggles.ResetBind.Value
+	if rbind==true then
+		game.Players.LocalPlayer.Character.Humanoid.Health = 0
+	end
+end)
+CharacterTab:AddToggle('InfStaminaToggle', {Text = 'Infinite Stamina', Default = false, Tooltip = 'Enable Infinite Stamina.',})
+CharacterTab:AddToggle('NoJumpCooldownToggle', {Text = 'Remove JumpCooldown', Default = false, Tooltip = 'Enable No JumpCooldown.',})
+CharacterTab:AddToggle('NoFallDamageToggle', {Text = 'Remove FallDamage', Default = false, Tooltip = 'Enable No FallDamage.',})
+CharacterTab:AddToggle('AntiDrownToggle', {Text = 'Anti Drown', Default = false, Tooltip = 'Enable No Drown.',})
+CharacterTab:AddToggle('BunnyHopToggle', {Text = 'BunnyHob', Default = false, Tooltip = 'Enable BunnyHob.',})
+Toggles.InfStaminaToggle:OnChanged(function()
+	if requiredc.EnableStamina == true then
+		requiredc.EnableStamina = false;
+	else
+		requiredc.EnableStamina = true
+	end
+end)
+local OLDJUMP = requiredc.JumpCoolDown
+Toggles.NoJumpCooldownToggle:OnChanged(function()
+	if requiredc.JumpCoolDown ~= 0 then
+		requiredc.JumpCoolDown = 0;
+	else
+		requiredc.JumpCoolDown = OLDJUMP
+	end
+end)
+Toggles.NoFallDamageToggle:OnChanged(function()
+	if requiredc.EnableFallDamage == true then
+		requiredc.EnableFallDamage = false;
+	else
+		requiredc.EnableFallDamage = true
+	end
+end)
+Toggles.AntiDrownToggle:OnChanged(function()
+	if requiredc.CanDrown == true then
+		requiredc.CanDrown = false;
+	else
+		requiredc.CanDrown = true
+	end
+end)
+Toggles.BunnyHopToggle:OnChanged(function()
+	if requiredc.AntiBunnyHop == true then
+		requiredc.AntiBunnyHop = false;
+	else
+		requiredc.AntiBunnyHop = true
+	end
+end)
+-- Troll
+
+-- // Server
+local CrashServerButton = ServerTab:AddButton("Crash Server", function(bool)
+
+	while true do
+		for i=1,10 do
+			GETV.Events.ServerBullet:FireServer(Vector3.new(0/0/0),Vector3.new(0/0/0))
+		end
+		task.wait()
+	end
+
+end)
+local LagServerButton = ServerTab:AddButton("Lag Server", function(bool)
+
+	GETV.Events.ServerBullet:FireServer(Vector3.new(0/0/0),Vector3.new(0/0/0))
+
+end)
+ServerTab:AddToggle('WhizzSERVERToggle', {Text = 'Loop Whizz Server', Default = false, Tooltip = 'Enable Whizz Server.',})
+ServerTab:AddToggle('SupressSERVERToggle', {Text = 'Loop Supress Server', Default = false, Tooltip = 'Enable Supress Server.',})
+Toggles.WhizzSERVERToggle:OnChanged(function()
+	while Toggles.WhizzSERVERToggle.Value==true do task.wait(0.1)
+		for i, player in pairs(game.Players:GetPlayers()) do
+			GETV.Events.Whizz:FireServer(player)
+		end
+	end
+end)
+Toggles.SupressSERVERToggle:OnChanged(function()
+	while Toggles.SupressSERVERToggle.Value==true do task.wait(0.1)
+		for i, player in pairs(game.Players:GetPlayers()) do
+			local ohInstance1 = player
+			local ohNumber2 = 1
+			GETV.Events.Suppression:FireServer(ohInstance1, ohNumber2)
+		end
+	end
+end)
+-- // Players
+PLR = {}
+for i, v in pairs(game.Players:GetPlayers()) do
+	if v.Name ~= game.Players.LocalPlayer.Name then
+		table.insert(PLR, v.Name) 
+	end
+end
+
+PlayersTab:AddDropdown('SelectPlrDrop', {Values = PLR, Default = 1, Multi = false, Text = 'Select Player:', Tooltip = 'Select player to troll',})
+PlayersTab:AddToggle('WhizzPLRToggle', {Text = 'Loop Whizz Player', Default = false, Tooltip = 'Enable Whizz Player.',})
+PlayersTab:AddToggle('SupressPLRToggle', {Text = 'Loop Supress Player', Default = false, Tooltip = 'Enable Supress Player.',})
+Toggles.WhizzPLRToggle:OnChanged(function()
+	while Toggles.WhizzPLRToggle.Value==true do task.wait(0.1)
+		while Toggles.SupressSERVERToggle.Value==true do task.wait(0.05)
+			local args = {[1] = game:GetService("Players")[Options.SelectPlrDrop.Value]}
+			GETV.Events.Whizz:FireServer(unpack(args))
+		end
+	end
+end)
+Toggles.SupressPLRToggle:OnChanged(function()
+	while Toggles.SupressSERVERToggle.Value==true do task.wait(0.05)
+		local ohInstance1 = game:GetService("Players")[Options.SelectPlrDrop.Value]
+		local ohNumber2 = 1
+		GETV.Events.Suppression:FireServer(ohInstance1, ohNumber2)
+	end
+end)
+BuildTab:AddButton("Build Jail", function()
+	local target = game:GetService("Players")[gengetv().player]
+	local cFrame = CFrame.new(-2,0,0)
+	local Size = {
+		X = 0,
+		Y = 5,
+		Z = 4
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+	local cFrame = CFrame.new(2,0,0)
+	local Size = {
+		X = 0,
+		Y = 5,
+		Z = 4
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+	local cFrame = CFrame.new(0,0,2)
+	local Size = {
+		X = 4,
+		Y = 5,
+		Z = 0
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+	local cFrame = CFrame.new(0,0,-2)
+	local Size = {
+		X = 4,
+		Y = 5,
+		Z = 0
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+	local cFrame = CFrame.new(0,2,0)
+	local Size = {
+		X = 4,
+		Y = 0,
+		Z = 3
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+end)
+BuildTab:AddButton("Build Dick", function()
+	local target = game:GetService("Players")[getgenv().player]
+	local cFrame = CFrame.new(0,10,0)
+	local Size = {
+		X = 20,
+		Y = 10,
+		Z = 10
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+	local cFrame = CFrame.new(0,30,0)
+	local Size = {
+		X = 10,
+		Y = 30,
+		Z = 10
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+	local cFrame = CFrame.new(0,40,0)
+	local Size = {
+		X = 12,
+		Y = 11,
+		Z = 15
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+end)
+BuildTab:AddButton("Build Nazism", function()
+	local target = game:GetService("Players")[getgenv().player]
+	local cFrame = CFrame.new(0,0,20)
+	local Size = {
+		X = 19,
+		Y = 3,
+		Z = 5
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+
+	local cFrame = CFrame.new(-8,16.5,20)
+	local Size = {
+		X = 3,
+		Y = 30,
+		Z = 5
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+
+
+	local cFrame = CFrame.new(-18,30,20)
+	local Size = {
+		X = 17,
+		Y = 3,
+		Z = 5
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+
+	local cFrame = CFrame.new(-8,15,20)
+	local Size = {
+		X = 36,
+		Y = 3,
+		Z = 5
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+
+	local cFrame = CFrame.new(8.5,24,20)
+	local Size = {
+		X = 3,
+		Y = 15,
+		Z = 5
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+
+	local cFrame = CFrame.new(-25.5,7,20)
+	local Size = {
+		X = 3,
+		Y = 19,
+		Z = 5
+	}
+	for _,v in next, game.ReplicatedStorage:GetDescendants() do
+		if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+			v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+		end
+	end
+end)
+BuildServer:AddButton("Jail All Server", function()
+	for i, v in pairs(game:GetService("Players"):GetChildren()) do
+		local target = v
+		local cFrame = CFrame.new(-2,0,0)
+		local Size = {
+			X = 0,
+			Y = 5,
+			Z = 4
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+		local cFrame = CFrame.new(2,0,0)
+		local Size = {
+			X = 0,
+			Y = 5,
+			Z = 4
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+		local cFrame = CFrame.new(0,0,2)
+		local Size = {
+			X = 4,
+			Y = 5,
+			Z = 0
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+		local cFrame = CFrame.new(0,0,-2)
+		local Size = {
+			X = 4,
+			Y = 5,
+			Z = 0
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+		local cFrame = CFrame.new(0,2,0)
+		local Size = {
+			X = 4,
+			Y = 0,
+			Z = 3
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+	end
+end)
+
+BuildServer:AddButton("Dick All Server", function()
+	for i, v in pairs(game:GetService("Players"):GetChildren()) do
+		local target = v
+		local cFrame = CFrame.new(0,10,0)
+		local Size = {
+			X = 20,
+			Y = 10,
+			Z = 10
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+		local cFrame = CFrame.new(0,30,0)
+		local Size = {
+			X = 10,
+			Y = 30,
+			Z = 10
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+		local cFrame = CFrame.new(0,40,0)
+		local Size = {
+			X = 12,
+			Y = 11,
+			Z = 15
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+	end
+end)
+BuildServer:AddButton("Nazism All Server", function()
+	for i, v in pairs(game:GetService("Players"):GetChildren()) do
+
+		local target = v
+		local cFrame = CFrame.new(0,0,20)
+		local Size = {
+			X = 19,
+			Y = 3,
+			Z = 5
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+
+		local cFrame = CFrame.new(-8,16.5,20)
+		local Size = {
+			X = 3,
+			Y = 30,
+			Z = 5
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+
+
+		local cFrame = CFrame.new(-18,30,20)
+		local Size = {
+			X = 17,
+			Y = 3,
+			Z = 5
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+
+		local cFrame = CFrame.new(-8,15,20)
+		local Size = {
+			X = 36,
+			Y = 3,
+			Z = 5
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+
+		local cFrame = CFrame.new(8.5,24,20)
+		local Size = {
+			X = 3,
+			Y = 15,
+			Z = 5
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+
+		local cFrame = CFrame.new(-25.5,7,20)
+		local Size = {
+			X = 3,
+			Y = 19,
+			Z = 5
+		}
+		for _,v in next, game.ReplicatedStorage:GetDescendants() do
+			if v.Name == 'Breach' and v:IsA('RemoteFunction') then
+				v:InvokeServer(3,{Fortified={},Destroyable=workspace},CFrame.new(),CFrame.new(),{CFrame=target.Character.HumanoidRootPart.CFrame*cFrame,Size=Size})
+			end
+		end
+	end
+end)
+
+BuildServer:AddButton("Restock Fortifications (If Stop Build)", function()
+	local args = {
+		[1] = game:GetService("Players").LocalPlayer.Character.ACS_Client.Kit.Fortifications,
+		[2] = -100000
+	}
+
+	game:GetService("ReplicatedStorage").ACS_Engine.Events.Refil:FireServer(unpack(args)) 
+end)
+BuildTab:AddButton("Restock Fortifications (If Stop Build)", function()
+	local args = {
+		[1] = game:GetService("Players").LocalPlayer.Character.ACS_Client.Kit.Fortifications,
+		[2] = -100000
+	}
+
+	game:GetService("ReplicatedStorage").ACS_Engine.Events.Refil:FireServer(unpack(args)) 
+end)
+
+-- Settings
+Library:OnUnload(function()
+	print('Unloaded!')
+	Library.Unloaded = true
+end)
+
+MenuSettingsBox:AddButton('Unload', function() Library:Unload() end)
+MenuSettingsBox:AddLabel('Toggle Menu Keybind'):AddKeyPicker('MenuKeybind', { Default = 'RightShift', NoUI = false, Text = 'Menu keybind', Mode = "Always" })
+MiscBox:AddLabel('Username: '.. game.Players.LocalPlayer.Name)
+MiscBox:AddLabel('UserID: '.. game.Players.LocalPlayer.UserId)
+MiscBox:AddLabel('Exploit: '..identifyexecutor())
+MiscBox:AddLabel('PlaceID: '..game.PlaceId)
+local RejoinButton = MiscBox:AddButton('Rejoin Game', function()
+	game:GetService("TeleportService"):Teleport(game.PlaceId, player)
+end)
+Library.ToggleKeybind = Options.MenuKeybind
+
+
+-- End Scripts
+
+resume(create(function()
+	RenderStepped:Connect(function()
+		if  Toggles.MousePosition.Value and Toggles.aim_Enabled.Value  then
+			if getClosestPlayer() then 
+				local Root = getClosestPlayer().Parent.PrimaryPart or getClosestPlayer()
+				local RootToViewportPoint, IsOnScreen = WorldToViewportPoint(Camera, Root.Position);
+
+				mouse_box.Visible = IsOnScreen
+				mouse_box.Position = Vector2.new(RootToViewportPoint.X, RootToViewportPoint.Y)
+			else 
+				mouse_box.Visible = false 
+				mouse_box.Position = Vector2.new()
+			end
+		end
+
+		if Toggles.Visible.Value then 
+			fov_circle.Visible = Toggles.Visible.Value
+			fov_circle.Color = Options.Color.Value
+			fov_circle.Position = getMousePosition()
+		end
+	end)
+end))
+
+-- hooks
+local oldNamecall
+oldNamecall = hookmetamethod(game, "__namecall", newcclosure(function(...)
+	local Method = getnamecallmethod()
+	local Arguments = {...}
+	local self = Arguments[1]
+	local chance = CalculateChance(SilentAimSettings.HitChance)
+	if Toggles.aim_Enabled.Value and self == workspace and not checkcaller() and chance == true then
+		if ValidateArguments(Arguments, ExpectedArguments.Raycast) then
+			local A_Origin = Arguments[2]
+
+			local HitPart = getClosestPlayer()
+			if HitPart then
+				Arguments[3] = getDirection(A_Origin, HitPart.Position)
+
+				return oldNamecall(unpack(Arguments))
+			end
+		end
+	end
+	return oldNamecall(...)
+end))
+OptionsMethodValue = false
+local oldIndex = nil 
+oldIndex = hookmetamethod(game, "__index", newcclosure(function(self, Index)
+	if self == Mouse and not checkcaller() and Toggles.aim_Enabled.Value and OptionsMethodValue == true and getClosestPlayer() then
+		local HitPart = getClosestPlayer()
+
+		if Index == "Target" or Index == "target" then 
+			return HitPart
+		elseif Index == "Hit" or Index == "hit" then 
+			return ((Toggles.Prediction.Value and (HitPart.CFrame + (HitPart.Velocity * PredictionAmount))) or (not Toggles.Prediction.Value and HitPart.CFrame))
+		elseif Index == "X" or Index == "x" then 
+			return self.X 
+		elseif Index == "Y" or Index == "y" then 
+			return self.Y 
+		elseif Index == "UnitRay" then 
+			return Ray.new(self.Origin, (self.Hit - self.Origin).Unit)
+		end
+	end
+
+	return oldIndex(self, Index)
+end))
