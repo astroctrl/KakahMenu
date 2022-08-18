@@ -1,3 +1,6 @@
+-- Pegar cod do v3m é feio TempleHook (Falando Em Vocês Obrigado Pelo Build)
+-- Open Source Pra Voces
+
 if game.PlaceId == 6990893297 then
 	if not game:IsLoaded() then 
 		game.Loaded:Wait()
